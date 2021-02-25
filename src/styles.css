@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import './auto-style/style1.scss';
+@import './auto-style/style2.scss';
+@import './auto-style/style3.scss'; */
+@import"~ng-pick-datetime/assets/style/picker.min.css";
+/* @import './assets/js/bootstrap.min.css'; */
+
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow:none;
+}
+
+ul,li{ padding:0;margin:0;list-style:none}
+
+input{
+    outline: none;
+    border:none
+}
+
+input:focus{
+    border:none
+}
+.back {
+    position: absolute;
+    left: 20px;
+    font-size: 5vh;
+    top: 19px;
+  }
+
+

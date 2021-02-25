@@ -1,0 +1,30 @@
+<!-- <p>category works!</p> -->
+<div class="content">
+    <!-- 1. header -->
+    <div class="header_content" [ngStyle]="{'background-color': backgroundColor}">
+      <div class="header" [ngStyle]="{'background-color': backgroundColor}">
+        <input class="search" type="text" placeholder="搜索..." (click)="gotoList(1)">
+      </div>
+    </div>
+    <!-- 分类 -->
+    <div class="content2">
+      <!-- 第一级分类 -->
+      <div class="left-aside">
+        <div *ngFor="let item of categoryList;let i=index" class="f-item" [ngClass]="{'active': isCheckedCategory==i}" (click)="selectCategory(i)">
+          {{item.name}}
+        </div>
+      </div>
+      <!-- 第二级分类 -->
+      <div class="right-aside">
+        <div *ngIf="categoryListItem.length > 0 || isCheckedCategory == index">
+          <div class="s-list">
+            <div class="cate-item" *ngFor="let fitem of categoryListItem" (click)="goProductList(fitem.id,1)">
+              <img class="text-img" src="{{fitem.image | formatImg}}" />
+              <div class="s-item">{{fitem.name}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>

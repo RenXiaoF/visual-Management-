@@ -1,0 +1,13 @@
+<!-- <p>ad-img works!</p> -->
+<div class="content">
+  <!-- header -->
+  <div class="header" [ngStyle]="{'background-color': backgroundColor}">
+    <span class="back" (click)="goBack(2)">&lt;</span>
+    <div class="header_title">{{titleName}}</div>
+  </div>
+  <!-- 图表 -->
+  <div class="div-iframe">
+    <iframe style="height:100%;width:99%;" [src]="jumpLink"></iframe>
+  </div>
+
+</div>

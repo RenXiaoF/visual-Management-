@@ -1,0 +1,90 @@
+<!-- <p>my works!</p> -->
+<div class="content">
+  <!-- 1. header -->
+  <div class="header_content" [ngStyle]="{'background-color': backgroundColor}">
+    <div class="header" [ngStyle]="{'background-color': backgroundColor}">
+      <div class="logo" (click)="gotoPerfactSelf()">
+        <img src="./assets/img/set.png" alt="">
+      </div>
+    </div>
+    <!-- 用户名 -->
+    <div class="user_content">
+      <img class="user" src="{{userInfo.head_pic ? userInfo.head_pic : './assets/img/my1.png'}}" alt="">
+      <!-- <img class="user" src="./assets/img/my1.png" alt=""> -->
+      <div class="user_text1">{{userInfo.mobile}}</div>
+      <div class="user_text2">{{userInfo.store_name}}</div>
+      <!-- <div class="user_text2">{{comName ? comName : userInfo.store_name}}</div> -->
+    </div>
+  </div>
+  <!-- 内容 -->
+  <div class="detail">
+
+    <div class="detail_userinfo" (click)="gotoPerfactSelf()">
+      <div class="user_info" >用户信息</div>
+      <div class="symbol">></div>
+    </div>
+
+    <div class="detail_userinfo" (click)="gotoChangePW()">
+      <div class="user_info" >修改密码</div>
+      <div class="symbol">></div>
+    </div>
+
+    <!-- <div class="detail_userinfo" (click)="gotoPerfactSelf()">
+      <div class="user_info" >更多</div>
+      <div class="symbol">></div>
+    </div> -->
+
+    <div class="detail_userinfo" (click)="gotoPriceWorkSummary()">
+      <div class="user_info" >计件报表汇总</div>
+      <div class="symbol">></div>
+    </div>
+
+    <div class="detail_userinfo" (click)="updateApp()">
+      <div class="user_info" >更新app应用</div>
+      <div class="symbol">></div>
+    </div>
+
+    <!--<div class="detail_userinfo" (click)="registerDevice(template)">-->
+      <!--<div class="user_info" >注册设备信息</div>-->
+      <!--<div class="symbol">></div>-->
+    <!--</div>-->
+
+    <!--<div class="detail_userinfo" (click)="getScreen()">-->
+      <!--<div class="user_info" >检测屏幕宽高</div>-->
+      <!--<div class="symbol">></div>-->
+    <!--</div>-->
+
+    <!--<div class="detail_userinfo" (click)="getPreventScreenShot()">-->
+      <!--<div class="user_info" >检测不能截屏和录屏</div>-->
+      <!--<div class="symbol">></div>-->
+    <!--</div>-->
+
+  </div>
+
+</div>
+
+
+<!--&lt;!&ndash; 弹框 有新的版本可更新 &ndash;&gt;-->
+<!--<ng-template #template >-->
+  <!--<div class="app-version">-->
+    <!--<div class="card" >-->
+      <!--<div class="app-title">注册设备信息</div>-->
+      <!--<div class="card_container">-->
+        <!--<span class="card_content">企业名称：</span>-->
+        <!--<input class="card_value" type="text" [(ngModel)]="device.enterprise" placeholder="" />-->
+      <!--</div>-->
+      <!--<div class="card_container card_container_last" >-->
+        <!--<span class="card_content" >纳税码：</span>-->
+        <!--<input class="card_value" type="text" [(ngModel)]="device.taxpayerid" placeholder="" />-->
+      <!--</div>-->
+      <!--<div class="card_buttons">-->
+        <!--<div>-->
+          <!--<button type="button" (click)="modalRef.hide()" class="cbut1">返回</button>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<button type="button" (click)="register()" class="cbut2">提交</button>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</ng-template>-->

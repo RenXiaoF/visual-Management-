@@ -1,0 +1,75 @@
+<div class="content">
+    <!-- header -->
+    <div class="header" [ngStyle]="{'background-color': backgroundColor}">
+        <div class="header_title">用户登陆</div>
+    </div>
+
+    <div class="content_con">
+      <div *ngIf="qrcode_img">
+          <div class="qrcode-img" (click)="canceImage()">
+              <img *ngIf="!cancel_flag" [src]="qrcode_img">
+              <img style="width:228px;height:228px" *ngIf="cancel_flag" [src]="cancel_qrcode">
+              <div>微信扫码登录</div>
+          </div>
+      </div>
+      <!-- <div class="content_qr">
+          <div class="qrcode-img" >
+              <img style="width:228px;height:228px"  src="./assets/img/null.png">
+              <div>微信扫码登录</div>
+          </div>
+      </div> -->
+
+      <!-- 内容 -->
+      <div class="content_input">
+        <!-- 账号密码    /   验证码  登陆 -->
+        <ng-container>
+          <div class="switch_type">
+            <div class="login-type-col" [ngClass]="{'login-type-action': account.typeAction == 'password'}" (click)="changeLogintype('password')">账号登陆</div>
+            <div class="login-type-col ipdl" [ngClass]="{'login-type-action': account.typeAction == 'mobile'}" (click)="changeLogintype('mobile')">手机登陆</div>
+          </div>
+        </ng-container>
+        <!-- 账号密码 -->
+        <ng-container *ngIf="account.typeAction == 'password'">
+          <div class="detail">
+              <div class="detail_userinfo">
+                  <span class="symbol">账号</span>
+                  <input class="user_info" type="text" [(ngModel)]="account.username" placeholder="请输入用户名" />
+              </div>
+              <div class="detail_userinfo">
+                  <span class="symbol">密码</span>
+                  <input class="user_info" [type]="passwordType" [(ngModel)]="account.password" placeholder="请输入密码" />
+                  <div (click)="seePass()">
+                    <img src="./assets/img/can_pwa.png" *ngIf="canSeePass == true"  class="see" [ngClass]="{'see-act': canSeePass === true}">
+                    <img src="./assets/img/can_npws.png" *ngIf="canSeePass == false"  class="see" [ngClass]="{'see-act': canSeePass === false}">
+                  </div>
+              </div>
+          </div>
+        </ng-container>
+        <!-- 验证码 -->
+        <ng-container *ngIf="account.typeAction == 'mobile'">
+          <div class="detail">
+              <div class="detail_userinfo">
+                  <span class="symbol">手机号码</span>
+                  <input class="user_info" type="text" [(ngModel)]="account.username" placeholder="输入手机号码" />
+              </div>
+              <div class="detail_userinfo">
+                  <span class="symbol">验证码</span>
+                  <input class="user_info" type="text" [(ngModel)]="account.code" placeholder="输入验证码" />
+                  <button [disabled]="Msgcode.verifycode.ifdisabled" (click)="Msgcode.getPhoneCode(account.username, 6)" class="get_code">
+                  {{Msgcode.verifycode.codetips}}
+                </button>
+              </div>
+          </div>
+        </ng-container>
+
+        <!-- 按钮 -->
+        <div class="buttons">
+            <div class="buttonLogin" (click)="doLogin()" [ngStyle]="{'background-color': backgroundColor}">登陆</div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,386 @@
+.content {
+  width: 100%;
+  height: 106%;
+  /* background: #0075b8; */
+  cursor: pointer;
+}
+
+.header {
+  padding: 10px;
+  /*background: #0075b8;*/
+  height: 8vh;
+  padding-top: 2vh;
+  position: fixed;
+  top: 0vh;
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
+  z-index: 1;
+}
+
+.back {
+  position: absolute;
+  left: 20px;
+  font-size: 6vh;
+  top: 10px;
+  width: 15vw;
+  height: 9vh;
+}
+.header_title {
+  font-size: 3vh;
+  margin-top: 1vh;
+}
+.img {
+  width: 3vh;
+  position: fixed;
+  top: 3vh;
+  right: 2vw;
+}
+/* 时间 */
+.time {
+  position: fixed;
+  top: 8vh;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  z-index: 1;
+}
+.time_start {
+  font-size: 1.5vh;
+  position: fixed;
+  left: 17vw;
+}
+.time_end {
+  font-size: 1.5vh;
+  position: fixed;
+  right: 17vw;
+}
+
+/* 卡片 */
+.card {
+  width: 96%;
+  margin-left: 2%;
+  margin-top: 13vh;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.2);
+}
+/* 标题 */
+.nav {
+  display: flex;
+}
+
+.nav_ul {
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  font-size: 2vh;
+  border-bottom: 1px solid #666;
+}
+
+.hot_desc {
+  display: flex;
+  flex-direction: column;
+}
+.p1 {
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 900;
+  padding-left: 2vw;
+}
+.p {
+  width: 100%;
+  padding-right: 5vw;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 900;
+}
+/* 内容 */
+.nav_ul1 {
+  display: flex;
+  width: 25%;
+  font-size: 2vh;
+  border-bottom: 1px solid #666;
+  border-right: 1px solid #666;
+}
+
+.hot_desc1 {
+  display: flex;
+  flex-direction: column;
+}
+.p2 {
+  width: 100%;
+  padding-right: 5vw;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 搜索框 */
+.search {
+  border: 1px solid #ccc;
+  background: #ffffff;
+  padding-left: 3vh;
+  font-size: xx-large;
+}
+
+.button {
+  color: white;
+  border: 1px solid #3c82fc;
+  padding: 1vh 33vw;
+  font-size: 2vh;
+  position: relative;
+  top: 17vh;
+  right: 2vw;
+  border-radius: 5rem;
+  background-color: #3c82fc;
+  /* box-shadow: 1px 1px 5px 5px #3c82fc; */
+}
+
+/* 弹框  弹出一个 查询条件 */
+.madal_box {
+  cursor: pointer;
+  position: fixed;
+  left: 3%;
+  bottom: 6vh;
+  width: 94%;
+  height: 86vh;
+  font-size: 2vh;
+  background-color: #c1c1c1;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.9);
+  z-index: 1;
+
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.modal_title {
+  text-align: center;
+  color: #0075b8;
+  font-size: 3vh;
+}
+.button_close {
+  position: relative;
+  right: -82vw;
+  top: -11vh;
+  width: 4vh;
+  height: 4vh;
+}
+
+.button_close span {
+  font-size: 3vh;
+}
+
+/* 内容 */
+.modal_body {
+  margin-top: 0vh;
+  margin-left: 10vw;
+}
+/* pick time */
+.pick_time {
+  height: 5vh;
+  display: initial;
+  background-color: white;
+}
+.modal_input {
+  font-size: 2.5vh;
+  margin-bottom: 1vh;
+}
+.pick_time input {
+  width: 65vw;
+  height: 4vh;
+  text-align: center;
+  font-size: 2.5vh;
+}
+
+@media screen and (max-width: 320px) {
+  .back {
+    position: absolute !important;
+    left: -3px !important;
+    font-size: 5vh !important;
+    top: 1.5vh !important;
+  }
+  .header_title {
+    font-size: 18px !important;
+    margin-top: 1vh !important;
+  }
+  .pick_time input {
+    font-size: 2vh !important;
+  }
+  /* 搜索框 */
+  .search {
+    font-size: 2vh !important;
+  }
+  .button {
+    font-size: 2vh !important;
+    padding: 1vh 32vw !important;
+    right: 1vw !important;
+    top: 7vh !important;
+  }
+  .button_close span {
+    font-size: 2vh !important;
+  }
+  .madal_box {
+    left: 5% !important;
+    width: 90% !important;
+  }
+  .button_close {
+    position: relative !important;
+    right: -80vw !important;
+    top: -11vh !important;
+    width: 4vh !important;
+    height: 4vh !important;
+  }
+}
+@media screen and (max-width: 375px) {
+  .back {
+    position: absolute !important;
+    left: -3px !important;
+    font-size: 5vh !important;
+    top: 1.5vh !important;
+  }
+  .header_title {
+    font-size: 18px !important;
+    margin-top: 1vh !important;
+  }
+  .pick_time input {
+    font-size: 2vh !important;
+  }
+  /* 搜索框 */
+  .search {
+    font-size: 2vh !important;
+  }
+  .button {
+    font-size: 2vh !important;
+    padding: 1vh 32vw !important;
+    right: 1vw !important;
+    top: 7vh !important;
+  }
+  .button_close span {
+    font-size: 2vh !important;
+  }
+  .madal_box {
+    left: 5% !important;
+    width: 90% !important;
+  }
+  .button_close {
+    position: relative !important;
+    right: -80vw !important;
+    top: -11vh !important;
+    width: 4vh !important;
+    height: 4vh !important;
+  }
+}
+@media screen and (max-width: 414px) {
+  .back {
+    position: absolute !important;
+    left: -3px !important;
+    font-size: 5vh !important;
+    top: 1.5vh !important;
+  }
+  .header_title {
+    font-size: 18px !important;
+    margin-top: 1vh !important;
+  }
+  .pick_time input {
+    font-size: 2.5vh !important;
+  }
+  /* 搜索框 */
+  .search {
+    font-size: 2.5vh !important;
+  }
+  .button {
+    font-size: 2.5vh !important;
+    padding: 1vh 32vw !important;
+    right: 1vw !important;
+    top: 7vh !important;
+  }
+  .button_close span {
+    font-size: 2vh !important;
+  }
+  .madal_box {
+    left: 5% !important;
+    width: 90% !important;
+  }
+  .button_close {
+    position: relative !important;
+    right: -80vw !important;
+    top: -11vh !important;
+    width: 4vh !important;
+    height: 4vh !important;
+  }
+}
+@media screen and (min-width: 415px) and (max-width: 960px) {
+  .header_title {
+    font-size: 5vh;
+    margin-top: 0vh;
+  }
+  .img {
+    width: 5vh;
+  }
+  .time_start {
+    font-size: 4vh;
+    position: fixed;
+    left: 17vw;
+    top: 7vh;
+  }
+  .time_end {
+    font-size: 4vh;
+    position: fixed;
+    right: 17vw;
+    top: 7vh;
+  }
+  .modal_title {
+    font-size: 4vh;
+  }
+  .pick_time input {
+    height: 6vh;
+  }
+  .search {
+    padding-left: 0vh;
+  }
+  .button {
+    right: 0vw;
+  }
+}
+@media screen and (min-width: 1081px) and (max-width: 1280px) {
+  .back {
+    position: absolute;
+    left: -9px;
+    font-size: 8vh;
+    top: 1px;
+    width: 15vw;
+    height: 9vh;
+  }
+  .header_title {
+    font-size: 5vh;
+    margin-top: 0vh;
+  }
+  .img {
+    width: 5vh;
+  }
+  .time_start {
+    font-size: 4vh;
+    position: fixed;
+    left: 17vw;
+    top: 7vh;
+  }
+  .time_end {
+    font-size: 4vh;
+    position: fixed;
+    right: 17vw;
+    top: 7vh;
+  }
+  .modal_title {
+    font-size: 4vh;
+  }
+  .pick_time input {
+    height: 6vh;
+  }
+  .search {
+    padding-left: 0vh;
+  }
+  .button {
+    right: 0vw;
+  }
+}

@@ -1,0 +1,175 @@
+/* 最大的容器 */
+.content {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+/* 引入的页面 */
+.page_content {
+  height: 90%;
+}
+/* fooder bar */
+.nav {
+  display: inline;
+  position: fixed;
+  width: 100%;
+  background-color: aliceblue;
+  bottom: -35px;
+}
+
+.nav_ul {
+  margin-top: 1vh;
+  font-size: xx-large;
+}
+.nav_ul li {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+}
+.nav_btn img {
+  width: 4vh;
+}
+.nav_text {
+  text-align: center;
+  font-size: 23px;
+}
+
+@media screen and (max-width: 320px) {
+  .nav {
+    bottom: -35px !important;
+  }
+  .nav_text {
+    font-size: 12px !important;
+  }
+  .nav_ul {
+    margin-top: -1vh !important;
+  }
+}
+@media screen and (max-width: 375px) {
+  .nav {
+    bottom: -35px !important;
+  }
+  .nav_text {
+    font-size: 12px !important;
+  }
+  .nav_ul {
+    margin-top: 0vh !important;
+  }
+}
+@media screen and (max-width: 414px) {
+  .nav {
+    bottom: -35px !important;
+  }
+  .nav_text {
+    font-size: 12px !important;
+  }
+  .nav_ul {
+    margin-top: 0vh !important;
+  }
+}
+@media screen and (min-width: 415px) and (max-width: 960px) {
+  .content {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  .content2 {
+    height: 100%;
+    display: flex;
+  }
+  .right-aside {
+    flex-shrink: 0;
+    width: 90%;
+    margin-left: 10%;
+  }
+  .page_content {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+  }
+  .nav {
+    flex-shrink: 0;
+    width: 10%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+  }
+  .nav_ul {
+    height: 100%;
+    margin-top: 1vh;
+    font-size: xx-large;
+  }
+  .nav_ul li {
+    display: flex;
+    width: 100%;
+    height: 25%;
+    text-align: center;
+    padding-left: 3vw;
+  }
+  .nav_text {
+    text-align: center;
+    font-size: 23px;
+  }
+  .nav_btn img {
+    width: 5vh;
+  }
+  /* .nav {
+    bottom: -43px;
+  }
+  .nav_ul {
+    margin-top: 0vh;
+  }
+  .nav_btn img {
+    width: 5vh;
+  }
+  .nav_text {
+    font-size: 3vh;
+  } */
+}
+@media screen and (min-width: 1081px) and (max-width: 1280px) {
+  .content {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  .content2 {
+    height: 100%;
+    display: flex;
+  }
+  .right-aside {
+    flex-shrink: 0;
+    width: 90%;
+    margin-left: 10%;
+  }
+  .page_content {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+  }
+  .nav {
+    flex-shrink: 0;
+    width: 10%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+  }
+  .nav_ul {
+    height: 100%;
+    margin-top: 1vh;
+    font-size: xx-large;
+  }
+  .nav_ul li {
+    display: flex;
+    width: 100%;
+    height: 25%;
+    text-align: center;
+    padding-left: 3vw;
+  }
+  .nav_text {
+    text-align: center;
+    font-size: 23px;
+  }
+  .nav_btn img {
+    width: 5vh;
+  }
+}

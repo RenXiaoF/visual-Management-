@@ -1,0 +1,90 @@
+<!-- <p>perfact-self works!</p> -->
+<div class="content">
+  <!-- header -->
+  <div class="header_content" [ngStyle]="{'background-color': backgroundColor}">
+    <div class="header">
+      <span class="back" (click)="goBack(3)">&lt;</span>
+      <div class="header_title">个人信息</div>
+    </div>
+  </div>
+  <!-- 个人信息 -->
+  <div class="useringo">
+
+    <div class="detail_userinfo">
+      <div style="padding-left: 2vh;" >用户姓名:</div>
+      <!-- <div style="padding-right: 2vh;">{{userInfo.realname}}</div> -->
+      <div style="padding-right: 2vh;">{{userInfo.nickname}}</div>
+    </div>
+
+    <div class="detail_userinfo">
+      <div style="padding-left: 2vh;" >手机号码:</div>
+      <div style="padding-right: 2vh;">{{userInfo.mobile}}</div>
+    </div>
+
+    <div class="detail_userinfo" >
+      <div style="padding-left: 2vh;" >所属企业:</div>
+      <div class="div2"> {{userInfo.store_name}} </div>
+      <!-- <div class="div2"> {{comName ? comName : userInfo.store_name}} </div> -->
+      <!-- <img src="./assets/img/edit.png" alt="" (click)="gotoCompanyList()"> -->
+    </div>
+
+    <div class="detail_userinfo">
+      <div style="padding-left: 2vh;" >所属部门:</div>
+      <div style="padding-right: 2vh;">{{newDepartmentName}}</div>
+      <img src="./assets/img/edit.png" alt="" (click)="gotoDepartMentList()">
+    </div>
+
+    <div class="detail_userinfo">
+      <div style="padding-left: 2vh;" >工号信息:</div>
+      <div style="padding-right: 2vh;">{{newEmployeeContent}}</div>
+      <img src="./assets/img/edit.png" alt="" (click)="gotoWorkInfo()">
+    </div>
+
+    <div class="detail_userinfo">
+      <div style="padding-left: 2vh;" >密码:</div>
+      <div style="padding-right: 2vh;">******</div>
+    </div>
+
+  </div>
+
+  <!-- 按钮 -->
+  <div class="buttons">
+    <div class="buttonInfo_back" (click)="goBack(3)" [ngStyle]="{'background-color': backgroundColor}">返回</div>
+    <div class="buttonInfo" (click)="logout()" [ngStyle]="{'background-color': backgroundColor}">重新登陆</div>
+    <!-- 点击退出：出现弹框，输入账号密码  才能退出 -->
+    <!-- <div class="buttonInfo" (click)="showSecond(template)" [ngStyle]="{'background-color': backgroundColor}">重新登陆</div> -->
+  </div>
+
+
+
+</div>
+
+  <!-- 退出的 弹框模板 -->
+  <ng-template #template>
+    <div class="madal_box">
+      <div class="modal-header modal_header">
+        <h4 class="modal-title pull-left modal_title">输入账号密码才可以退出</h4>
+        <button type="button" class="close pull-right button_close" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body modal_body">
+            <!-- 内容 -->
+        <div class="detail">
+          <div class="detail_userinfo2">
+              <span class="symbol">账号</span>
+              <input class="user_info" type="text" [(ngModel)]="user.username" placeholder="请输入用户名" />
+          </div>
+          <div class="detail_userinfo2">
+              <span class="symbol">密码</span>
+              <input class="user_info" type="text" [(ngModel)]="user.password" placeholder="请输入新密码" />
+          </div>
+        </div>
+        <!-- 按钮 -->
+        <div class="buttons">
+            <div class="buttonLogin" (click)="logout(); modalRef.hide()">确定</div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+

@@ -1,0 +1,407 @@
+<!--<div class="content" (click)="closeScreenSaver()" style=" background:url('assets/screen.png') rgba(0, 0, 0, 0) 0% 0% / cover no-repeat;background-position:center;">-->
+<div class="content"   [ngStyle]="{'background-color': backgroundColor}">
+    <!-- 1. 屏保 图片 -->
+     <img *ngIf="!video" style="width:100%;height:100%;z-index:99" src="{{url}}" (click)="closeScreenSaver()">
+    <!-- 2. 屏保 视频 -->
+    <video *ngIf="video" id="infomedia" width='100%' height="100%" autoplay="autoplay" loop="loop" (click)="closeScreenSaver()" >
+        <source src="{{video}}">
+    </video>
+    <!-- 3.  屏保  swiper -->
+    <!--<ng-container *ngIf="isSwiper == true">-->
+      <!--<ng-container *ngIf="swiperLength == 1">-->
+            <!--<div id="demo" class="carousel slide style" data-ride="carousel" >-->
+              <!--&lt;!&ndash; 指示符 &ndash;&gt;-->
+              <!--<ul class="carousel-indicators" >-->
+                <!--<li data-target="#demo" data-slide-to="0" class="active"></li>-->
+
+              <!--</ul>-->
+              <!--&lt;!&ndash; 轮播图片 &ndash;&gt;-->
+              <!--<div class="carousel-inner" style="height: 100%;">-->
+                <!--<div class="carousel-item active" style="height: 100%;">-->
+                  <!--<img src="{{swiperList1[0].image | formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--&lt;!&ndash; 左右切换按钮 &ndash;&gt;-->
+              <!--<a class="carousel-control-prev" href="#demo" data-slide="prev">-->
+                <!--<span class="carousel-control-prev-icon"></span>-->
+              <!--</a>-->
+              <!--<a class="carousel-control-next" href="#demo" data-slide="next">-->
+                <!--<span class="carousel-control-next-icon"></span>-->
+              <!--</a>-->
+            <!--</div>-->
+      <!--</ng-container>-->
+      <!--<ng-container *ngIf="swiperLength == 2">-->
+            <!--<div id="demo" class="carousel slide style" data-ride="carousel">-->
+              <!--&lt;!&ndash; 指示符 &ndash;&gt;-->
+              <!--<ul class="carousel-indicators" >-->
+                <!--<li data-target="#demo" data-slide-to="0" class="active"></li>-->
+                <!--<li data-target="#demo" data-slide-to="1"></li>-->
+              <!--</ul>-->
+              <!--&lt;!&ndash; 轮播图片 &ndash;&gt;-->
+              <!--<div class="carousel-inner" style="height: 100%;">-->
+                <!--<div class="carousel-item active" style="height: 100%;">-->
+                  <!--<img src="{{swiperList2[0].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList2[1].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--&lt;!&ndash; 左右切换按钮 &ndash;&gt;-->
+              <!--<a class="carousel-control-prev" href="#demo" data-slide="prev">-->
+                <!--<span class="carousel-control-prev-icon"></span>-->
+              <!--</a>-->
+              <!--<a class="carousel-control-next" href="#demo" data-slide="next">-->
+                <!--<span class="carousel-control-next-icon"></span>-->
+              <!--</a>-->
+            <!--</div>-->
+      <!--</ng-container>-->
+      <!--<ng-container *ngIf="swiperLength == 3">-->
+            <!--<div id="demo" class="carousel slide style" data-ride="carousel" >-->
+              <!--&lt;!&ndash; 指示符 &ndash;&gt;-->
+              <!--<ul class="carousel-indicators" >-->
+                <!--<li data-target="#demo" data-slide-to="0" class="active"></li>-->
+                <!--<li data-target="#demo" data-slide-to="1"></li>-->
+                <!--<li data-target="#demo" data-slide-to="2"></li>-->
+              <!--</ul>-->
+              <!--&lt;!&ndash; 轮播图片 &ndash;&gt;-->
+              <!--<div class="carousel-inner" style="height: 100%;">-->
+                <!--<div class="carousel-item active" style="height: 100%;">-->
+                  <!--<img src="{{swiperList3[0].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList3[1].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList3[2].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--&lt;!&ndash; 左右切换按钮 &ndash;&gt;-->
+              <!--<a class="carousel-control-prev" href="#demo" data-slide="prev">-->
+                <!--<span class="carousel-control-prev-icon"></span>-->
+              <!--</a>-->
+              <!--<a class="carousel-control-next" href="#demo" data-slide="next">-->
+                <!--<span class="carousel-control-next-icon"></span>-->
+              <!--</a>-->
+            <!--</div>-->
+      <!--</ng-container>-->
+      <!--<ng-container *ngIf="swiperLength == 4">-->
+            <!--<div id="demo" class="carousel slide style" data-ride="carousel" >-->
+              <!--&lt;!&ndash; 指示符 &ndash;&gt;-->
+              <!--<ul class="carousel-indicators" >-->
+                <!--<li data-target="#demo" data-slide-to="0" class="active"></li>-->
+                <!--<li data-target="#demo" data-slide-to="1"></li>-->
+                <!--<li data-target="#demo" data-slide-to="2"></li>-->
+                <!--<li data-target="#demo" data-slide-to="3"></li>-->
+              <!--</ul>-->
+              <!--&lt;!&ndash; 轮播图片 &ndash;&gt;-->
+              <!--<div class="carousel-inner" style="height: 100%;">-->
+                <!--<div class="carousel-item active" style="height: 100%;">-->
+                  <!--<img src="{{swiperList4[0].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList4[1].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList4[2].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList4[3].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--&lt;!&ndash; 左右切换按钮 &ndash;&gt;-->
+              <!--<a class="carousel-control-prev" href="#demo" data-slide="prev">-->
+                <!--<span class="carousel-control-prev-icon"></span>-->
+              <!--</a>-->
+              <!--<a class="carousel-control-next" href="#demo" data-slide="next">-->
+                <!--<span class="carousel-control-next-icon"></span>-->
+              <!--</a>-->
+            <!--</div>-->
+      <!--</ng-container>-->
+      <!--<ng-container *ngIf="swiperLength == 5">-->
+            <!--<div id="demo" class="carousel slide style" data-ride="carousel" >-->
+              <!--&lt;!&ndash; 指示符 &ndash;&gt;-->
+              <!--<ul class="carousel-indicators" >-->
+                <!--<li data-target="#demo" data-slide-to="0" class="active"></li>-->
+                <!--<li data-target="#demo" data-slide-to="1"></li>-->
+                <!--<li data-target="#demo" data-slide-to="2"></li>-->
+                <!--<li data-target="#demo" data-slide-to="3"></li>-->
+                <!--<li data-target="#demo" data-slide-to="4"></li>-->
+              <!--</ul>-->
+              <!--&lt;!&ndash; 轮播图片 &ndash;&gt;-->
+              <!--<div class="carousel-inner" style="height: 100%;">-->
+                <!--<div class="carousel-item active" style="height: 100%;">-->
+                  <!--<img src="{{swiperList5[0].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList5[1].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList5[2].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList5[3].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList5[4].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--&lt;!&ndash; 左右切换按钮 &ndash;&gt;-->
+              <!--<a class="carousel-control-prev" href="#demo" data-slide="prev">-->
+                <!--<span class="carousel-control-prev-icon"></span>-->
+              <!--</a>-->
+              <!--<a class="carousel-control-next" href="#demo" data-slide="next">-->
+                <!--<span class="carousel-control-next-icon"></span>-->
+              <!--</a>-->
+            <!--</div>-->
+      <!--</ng-container>-->
+      <!--<ng-container *ngIf="swiperLength == 6">-->
+            <!--<div id="demo" class="carousel slide style" data-ride="carousel" >-->
+              <!--&lt;!&ndash; 指示符 &ndash;&gt;-->
+              <!--<ul class="carousel-indicators" >-->
+                <!--<li data-target="#demo" data-slide-to="0" class="active"></li>-->
+                <!--<li data-target="#demo" data-slide-to="1"></li>-->
+                <!--<li data-target="#demo" data-slide-to="2"></li>-->
+                <!--<li data-target="#demo" data-slide-to="3"></li>-->
+                <!--<li data-target="#demo" data-slide-to="4"></li>-->
+                <!--<li data-target="#demo" data-slide-to="5"></li>-->
+              <!--</ul>-->
+              <!--&lt;!&ndash; 轮播图片 &ndash;&gt;-->
+              <!--<div class="carousel-inner" style="height: 100%;">-->
+                <!--<div class="carousel-item active" style="height: 100%;">-->
+                  <!--<img src="{{swiperList6[0].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList6[1].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList6[2].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList6[3].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList6[4].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList6[5].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--&lt;!&ndash; 左右切换按钮 &ndash;&gt;-->
+              <!--<a class="carousel-control-prev" href="#demo" data-slide="prev">-->
+                <!--<span class="carousel-control-prev-icon"></span>-->
+              <!--</a>-->
+              <!--<a class="carousel-control-next" href="#demo" data-slide="next">-->
+                <!--<span class="carousel-control-next-icon"></span>-->
+              <!--</a>-->
+            <!--</div>-->
+      <!--</ng-container>-->
+      <!--<ng-container *ngIf="swiperLength == 7">-->
+            <!--<div id="demo" class="carousel slide style" data-ride="carousel" >-->
+              <!--&lt;!&ndash; 指示符 &ndash;&gt;-->
+              <!--<ul class="carousel-indicators" >-->
+                <!--<li data-target="#demo" data-slide-to="0" class="active"></li>-->
+                <!--<li data-target="#demo" data-slide-to="1"></li>-->
+                <!--<li data-target="#demo" data-slide-to="2"></li>-->
+                <!--<li data-target="#demo" data-slide-to="3"></li>-->
+                <!--<li data-target="#demo" data-slide-to="4"></li>-->
+                <!--<li data-target="#demo" data-slide-to="5"></li>-->
+                <!--<li data-target="#demo" data-slide-to="6"></li>-->
+              <!--</ul>-->
+              <!--&lt;!&ndash; 轮播图片 &ndash;&gt;-->
+              <!--<div class="carousel-inner" style="height: 100%;">-->
+                <!--<div class="carousel-item active" style="height: 100%;">-->
+                  <!--<img src="{{swiperList7[0].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList7[1].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList7[2].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList7[3].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList7[4].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList7[5].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList7[6].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--&lt;!&ndash; 左右切换按钮 &ndash;&gt;-->
+              <!--<a class="carousel-control-prev" href="#demo" data-slide="prev">-->
+                <!--<span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+              <!--</a>-->
+              <!--<a class="carousel-control-next" href="#demo" data-slide="next">-->
+                <!--<span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+              <!--</a>-->
+            <!--</div>-->
+      <!--</ng-container>-->
+      <!--<ng-container *ngIf="swiperLength == 8">-->
+            <!--<div id="demo" class="carousel slide style" data-ride="carousel">-->
+              <!--&lt;!&ndash; 指示符 &ndash;&gt;-->
+              <!--<ul class="carousel-indicators" >-->
+                <!--<li data-target="#demo" data-slide-to="0" class="active"></li>-->
+                <!--<li data-target="#demo" data-slide-to="1"></li>-->
+                <!--<li data-target="#demo" data-slide-to="2"></li>-->
+                <!--<li data-target="#demo" data-slide-to="3"></li>-->
+                <!--<li data-target="#demo" data-slide-to="4"></li>-->
+                <!--<li data-target="#demo" data-slide-to="5"></li>-->
+                <!--<li data-target="#demo" data-slide-to="6"></li>-->
+                <!--<li data-target="#demo" data-slide-to="7"></li>-->
+              <!--</ul>-->
+              <!--&lt;!&ndash; 轮播图片 &ndash;&gt;-->
+              <!--<div class="carousel-inner" style="height: 100%;">-->
+                <!--<div class="carousel-item active" style="height: 100%;">-->
+                  <!--<img src="{{swiperList8[0].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList8[1].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList8[2].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList8[3].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList8[4].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList8[5].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList8[6].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList8[7].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--&lt;!&ndash; 左右切换按钮 &ndash;&gt;-->
+              <!--<a class="carousel-control-prev" href="#demo" data-slide="prev">-->
+                <!--<span class="carousel-control-prev-icon"></span>-->
+              <!--</a>-->
+              <!--<a class="carousel-control-next" href="#demo" data-slide="next">-->
+                <!--<span class="carousel-control-next-icon"></span>-->
+              <!--</a>-->
+            <!--</div>-->
+      <!--</ng-container>-->
+      <!--<ng-container *ngIf="swiperLength == 9">-->
+            <!--<div id="demo" class="carousel slide style" data-ride="carousel" >-->
+              <!--&lt;!&ndash; 指示符 &ndash;&gt;-->
+              <!--<ul class="carousel-indicators" >-->
+                <!--<li data-target="#demo" data-slide-to="0" class="active"></li>-->
+                <!--<li data-target="#demo" data-slide-to="1"></li>-->
+                <!--<li data-target="#demo" data-slide-to="2"></li>-->
+                <!--<li data-target="#demo" data-slide-to="3"></li>-->
+                <!--<li data-target="#demo" data-slide-to="4"></li>-->
+                <!--<li data-target="#demo" data-slide-to="5"></li>-->
+                <!--<li data-target="#demo" data-slide-to="6"></li>-->
+                <!--<li data-target="#demo" data-slide-to="7"></li>-->
+                <!--<li data-target="#demo" data-slide-to="8"></li>-->
+              <!--</ul>-->
+              <!--&lt;!&ndash; 轮播图片 &ndash;&gt;-->
+              <!--<div class="carousel-inner" style="height: 100%;">-->
+                <!--<div class="carousel-item active" style="height: 100%;">-->
+                  <!--<img src="{{swiperList9[0].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList9[1].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList9[2].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList9[3].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList9[4].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList9[5].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList9[6].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList9[7].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList9[8].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--&lt;!&ndash; 左右切换按钮 &ndash;&gt;-->
+              <!--<a class="carousel-control-prev" href="#demo" data-slide="prev">-->
+                <!--<span class="carousel-control-prev-icon"></span>-->
+              <!--</a>-->
+              <!--<a class="carousel-control-next" href="#demo" data-slide="next">-->
+                <!--<span class="carousel-control-next-icon"></span>-->
+              <!--</a>-->
+            <!--</div>-->
+      <!--</ng-container>-->
+      <!--<ng-container *ngIf="swiperLength >= 10">-->
+            <!--<div id="demo" class="carousel slide style" data-ride="carousel" >-->
+              <!--&lt;!&ndash; 指示符 &ndash;&gt;-->
+              <!--<ul class="carousel-indicators" >-->
+                <!--<li data-target="#demo" data-slide-to="0" class="active"></li>-->
+                <!--<li data-target="#demo" data-slide-to="1"></li>-->
+                <!--<li data-target="#demo" data-slide-to="2"></li>-->
+                <!--<li data-target="#demo" data-slide-to="3"></li>-->
+                <!--<li data-target="#demo" data-slide-to="4"></li>-->
+                <!--<li data-target="#demo" data-slide-to="5"></li>-->
+                <!--<li data-target="#demo" data-slide-to="6"></li>-->
+                <!--<li data-target="#demo" data-slide-to="7"></li>-->
+                <!--<li data-target="#demo" data-slide-to="8"></li>-->
+                <!--<li data-target="#demo" data-slide-to="9"></li>-->
+              <!--</ul>-->
+              <!--&lt;!&ndash; 轮播图片 &ndash;&gt;-->
+              <!--<div class="carousel-inner" style="height: 100%;">-->
+                <!--&lt;!&ndash; <div class="carousel-item active swiper_dev" >-->
+                  <!--<img src="{{swiperList10[0].image|formatImg}}" class="swiper_img">-->
+                <!--</div> &ndash;&gt;-->
+                <!--<div class="carousel-item active" style="height: 100%;">-->
+                  <!--<img src="{{swiperList10[0].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList10[1].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList10[2].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList10[3].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList10[4].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList10[5].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList10[6].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList10[7].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList10[8].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+                <!--<div class="carousel-item" style="height: 100%;">-->
+                  <!--<img src="{{swiperList10[9].image|formatImg}}"  height="100%" width="100%"  (click)="closeScreenSaver()">-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--&lt;!&ndash; 左右切换按钮 &ndash;&gt;-->
+              <!--<a class="carousel-control-prev" href="#demo" data-slide="prev">-->
+                <!--<span class="carousel-control-prev-icon"></span>-->
+              <!--</a>-->
+              <!--<a class="carousel-control-next" href="#demo" data-slide="next">-->
+                <!--<span class="carousel-control-next-icon"></span>-->
+              <!--</a>-->
+            <!--</div>-->
+      <!--</ng-container>-->
+      <!---->
+    <!--</ng-container>-->
+</div>

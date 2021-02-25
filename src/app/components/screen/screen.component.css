@@ -1,0 +1,13 @@
+@import "../../../assets/js/bootstrap.min.css";
+
+/* 最大的容器 */
+.content {
+  width: 100%;
+  height: 100vh;
+  cursor: pointer;
+}
+/* swper 轮播 */
+.style {
+  height: 100%;
+  background-color: white;
+}

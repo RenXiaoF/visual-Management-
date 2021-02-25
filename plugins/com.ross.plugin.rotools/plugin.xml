@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.ross.plugin.rotools" version="1.0.0" 
+xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>Rotools</name>
+	<js-module name="Rotools" src="www/Rotools.js">
+		<clobbers target="cordova.plugins.Rotools" />
+	</js-module>
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="Rotools">
+				<param name="android-package" value="com.ross.plugin.rotools.Rotools" />
+			</feature>
+		</config-file>
+		<config-file parent="/*" target="AndroidManifest.xml">
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+			<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+		</config-file>
+		<source-file src="src/android/Rotools.java" target-dir="src/com/ross/plugin/rotools" />
+	</platform>
+</plugin>

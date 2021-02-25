@@ -1,0 +1,29 @@
+<!-- <p>company-list works!</p> -->
+<div class="content">
+  <!-- header -->
+  <div class="header" [ngStyle]="{'background-color': backgroundColor}">
+    <span class="back" (click)="goBack()">&lt;</span>
+    <div class="header_title">选择绑定的企业</div>
+  </div>
+  <!-- 个人信息 -->
+  <div class="useringo">
+    <!-- 搜索 -->
+    <div>
+      <input class="search" type="text" placeholder="搜索..." [(ngModel)]="searchname" >
+      <div class="buttons" >
+        <button (click)="getItems()" class="button"> 搜索</button>
+      </div>
+    </div>
+    <!-- 公司列表 -->
+    <div class="detail_userinfo" *ngFor="let company of companyList; let i = index">
+      <div style="padding-right: 2vh;" (click)="goBackP(company.store_name, company.store_id, i)" >
+        {{company.store_name}}
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+

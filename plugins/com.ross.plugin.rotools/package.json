@@ -1,0 +1,17 @@
+{
+  "name": "com.ross.plugin.rotools",
+  "version": "1.0.0",
+  "description": "",
+  "cordova": {
+    "id": "com.ross.plugin.rotools",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "gotter@163.com",
+  "license": "ISC"
+}

@@ -1,0 +1,8 @@
+{
+  "/upload/craft_pdf":{
+    "target":"https://cloudpf.weunit.cn",
+    "secure":false,
+    "logLevel":"debug",
+    "changeOrigin":true
+  }
+}

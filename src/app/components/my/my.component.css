@@ -1,0 +1,258 @@
+/* 最大的容器 */
+.content {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+/* header */
+.header_content {
+  height: 17vh;
+  /*background: #3880ff;*/
+}
+.header {
+  float: right;
+  padding-top: 6vh;
+  margin-right: 4vh;
+}
+.logo img {
+  width: 8vw;
+}
+.user_content {
+  padding-top: 5vh;
+  padding-left: 4vh;
+}
+.user {
+  width: 7vh;
+}
+.user_text1 {
+  color: white;
+  margin-top: -4vh;
+  margin-left: 8vh;
+  font-size: xx-large;
+}
+.user_text2 {
+  color: white;
+  margin-top: -4vh;
+  margin-left: 8vh;
+  font-size: xx-large;
+}
+/* 下面的内容 */
+.detail {
+  height: 80%;
+}
+.detail_userinfo {
+  display: flex;
+  justify-content: space-between;
+  width: 86%;
+  margin-left: 6%;
+  padding: 3vh 0;
+  border-bottom: 0.5px solid #c1c1c1;
+}
+.user_info {
+  padding-left: 2vh;
+  font-size: 3vh;
+}
+.symbol {
+  padding-right: 2vh;
+  font-size: 50px;
+}
+/* 注册设备信息的弹框 */
+.app-version {
+  position: fixed;
+  top: 17vh;
+  width: 100%;
+  z-index: 999;
+}
+.card {
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid gray;
+  transition: 0.5s;
+  width: 80%;
+  border-radius: 1rem;
+  margin-left: 10%;
+  margin-top: 3vh;
+  background: #ffffff;
+}
+.app-title {
+  font-size: 3vh;
+  height: 6vh;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 2vh;
+  background-color: #e21918;
+  color: white;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.card_container {
+  padding: 10px;
+  height: auto;
+  width: 90%;
+}
+.card_container_last {
+  padding-bottom: 80px;
+}
+.card_title {
+  /* border-bottom: 0.5px solid #c1c1c1; */
+  padding: 1vh 2vh;
+  font-weight: 600;
+  font-size: 2.5vh;
+}
+.card_content {
+  height: 8vh;
+  padding: 1vh 2vh;
+  /* font-weight: 600; */
+  font-size: 2vh;
+  /* color: #666; */
+}
+
+.card_value {
+  height: 6vh;
+  /*padding: 1vh 2vh;*/
+  /* font-weight: 600; */
+  font-size: 2vh;
+  border-bottom: 1px solid gray;
+  /* color: #666; */
+}
+
+.card_buttons {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 2vh;
+}
+.cbut1 {
+  font-size: 2vh;
+  color: #666;
+  background: white;
+  border: 0;
+  padding: 10px 30px;
+}
+.cbut2 {
+  font-size: 2vh;
+  color: white;
+  background: #e21918;
+  border: 0;
+  padding: 10px 30px;
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+    padding-top: 2vh !important;
+    margin-right: 2vh !important;
+  }
+  .user_content {
+    padding-top: 8vh !important;
+  }
+  .user_text1 {
+    margin-top: -4vh !important;
+    font-size: 12px !important;
+  }
+  .user_text2 {
+    margin-top: -5vh !important;
+    font-size: 12px !important;
+  }
+  .detail_userinfo {
+    padding: 1.5vh 0 !important;
+  }
+  .user_info {
+    font-size: 12px !important;
+  }
+  .symbol {
+    font-size: 12px !important;
+  }
+}
+@media screen and (max-width: 375px) {
+  .header {
+    padding-top: 2vh !important;
+    margin-right: 2vh !important;
+  }
+  .user_content {
+    padding-top: 8vh !important;
+  }
+  .user_text1 {
+    margin-top: -4vh !important;
+    font-size: 12px !important;
+  }
+  .user_text2 {
+    margin-top: -6vh !important;
+    font-size: 12px !important;
+  }
+  .detail_userinfo {
+    padding: 1.5vh 0 !important;
+  }
+  .user_info {
+    font-size: 14px !important;
+  }
+  .symbol {
+    font-size: 14px !important;
+  }
+}
+@media screen and (max-width: 414px) {
+  .header {
+    padding-top: 2vh !important;
+    margin-right: 2vh !important;
+  }
+  .user_content {
+    padding-top: 8vh !important;
+  }
+  .user_text1 {
+    margin-top: -4vh !important;
+    font-size: 12px !important;
+  }
+  .user_text2 {
+    margin-top: -6vh !important;
+    font-size: 12px !important;
+  }
+  .detail_userinfo {
+    padding: 1.5vh 0 !important;
+  }
+  .user_info {
+    font-size: 16px !important;
+  }
+  .symbol {
+    font-size: 16px !important;
+  }
+}
+@media screen and (min-width: 415px) and (max-width: 960px) {
+  .user {
+    width: 10vh;
+  }
+  .user_text1 {
+    margin-top: -6vh;
+    margin-left: 12vh;
+    font-size: x-large;
+  }
+  .user_text2 {
+    margin-top: -11vh;
+    margin-left: 12vh;
+    font-size: x-large;
+  }
+  .logo img {
+    width: 3vw;
+  }
+  .symbol {
+    font-size: 3vh;
+  }
+}
+@media screen and (min-width: 1081px) and (max-width: 1280px) {
+  .user {
+    width: 10vh;
+  }
+  .user_text1 {
+    margin-top: -6vh;
+    margin-left: 12vh;
+    font-size: x-large;
+  }
+  .user_text2 {
+    margin-top: -9vh;
+    margin-left: 12vh;
+    font-size: x-large;
+  }
+  .logo img {
+    width: 3vw;
+  }
+  .symbol {
+    font-size: 3vh;
+  }
+}

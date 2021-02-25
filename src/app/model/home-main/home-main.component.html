@@ -1,0 +1,40 @@
+<!-- <p>home-main works!</p> -->
+<div class="content">
+  <div class="content2">
+    <div class="right-aside">
+      <!-- 1. 首页 -->
+      <div class="page_content" *ngIf="index == 0">
+        <app-index></app-index>
+      </div>
+      <!-- 2. 分类 -->
+      <div class="page_content" *ngIf="index == 1">
+        <app-category></app-category>
+      </div>
+      <!-- 3. 看板 -->
+      <div class="page_content" *ngIf="index == 2">
+        <app-kanban></app-kanban>
+      </div>
+      <!-- 4. 我的 -->
+      <div class="page_content" *ngIf="index == 3">
+        <app-my></app-my>
+      </div>
+    </div>
+
+
+    <!-- fooder bar -->
+    <div class="nav">
+      <ul class="nav_ul">
+          <li  *ngFor="let partType of barTypes" [ngStyle]="{'color': partType.checked? '#0075B8':'black'}"
+            (click)="changePartType(partType.type)">
+            <div class="nav_btn">
+              <img src="{{partType.secondImg}}" alt="" *ngIf="partType.checked == true">
+              <img src="{{partType.firstImg}}" alt="" *ngIf="partType.checked == false">
+              <div class="nav_text"><span>{{partType.name}}</span></div>
+            </div>
+          <li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+

@@ -1,0 +1,171 @@
+/*  */
+.content {
+  width: 100%;
+  height: 100%;
+  /* 光标 手型 */
+  cursor: pointer;
+}
+/* header */
+.header_chane {
+  /*background: #0075b8;*/
+  height: 8vh;
+  padding-top: 2vh;
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
+}
+.back_Up {
+  position: absolute;
+  left: 20px;
+  font-size: 80px;
+}
+.header_title {
+  font-size: 3vh;
+  margin-top: 1vh;
+}
+
+/* 内容 */
+.detail {
+  height: 80%;
+}
+.detail_userinfo {
+  display: flex;
+  justify-content: space-between;
+  width: 86%;
+  margin-left: 6%;
+  padding: 3vh 0;
+  border-bottom: 0.5px solid #c1c1c1;
+}
+.user_info {
+  padding-left: 2vh;
+  font-size: 3vh;
+}
+.see {
+  padding: 0 0.8rem;
+}
+.see-act {
+  width: 5vh;
+  color: #3880ff;
+}
+
+/* 按钮 */
+.buttons {
+  width: 80%;
+  margin-left: 10%;
+}
+.buttonUp {
+  position: fixed;
+  left: 5%;
+  background-color: #3880ff;
+  border-radius: 1rem;
+  color: white;
+  text-align: center;
+  padding: 2vh 0;
+  font-size: 3vh;
+  width: 90%;
+}
+
+@media screen and (max-width: 320px) {
+  .back_Up {
+    position: absolute !important;
+    left: 14px !important;
+    font-size: 5vh !important;
+    top: 1.5vh !important;
+  }
+  .header_title {
+    font-size: 18px !important;
+    margin-top: 1vh !important;
+  }
+  .detail_userinfo {
+    width: 79% !important;
+    margin-left: 7% !important;
+  }
+  .user_info {
+    font-size: 2vh !important;
+  }
+  .see-act {
+    width: 4vh !important;
+    color: #3880ff !important;
+  }
+  .see {
+    padding: 0 0.8rem !important;
+    margin-left: -5vw !important;
+  }
+}
+@media screen and (max-width: 375px) {
+  .back_Up {
+    position: absolute !important;
+    left: 14px !important;
+    font-size: 5vh !important;
+    top: 1.5vh !important;
+  }
+  .header_title {
+    font-size: 20px !important;
+    margin-top: 1vh !important;
+  }
+  .detail_userinfo {
+    width: 79% !important;
+    margin-left: 7% !important;
+  }
+  .user_info {
+    font-size: 2vh !important;
+  }
+  .see-act {
+    width: 4vh !important;
+    color: #3880ff !important;
+  }
+  .see {
+    padding: 0 0.8rem !important;
+    margin-left: -5vw !important;
+  }
+}
+@media screen and (max-width: 414px) {
+  .back_Up {
+    position: absolute !important;
+    left: 14px !important;
+    font-size: 5vh !important;
+    top: 1.5vh !important;
+  }
+  .header_title {
+    font-size: 20px !important;
+    margin-top: 1vh !important;
+  }
+  .detail_userinfo {
+    width: 79% !important;
+    margin-left: 7% !important;
+  }
+  .user_info {
+    font-size: 2vh !important;
+  }
+  .see-act {
+    width: 4vh !important;
+    color: #3880ff !important;
+  }
+  .see {
+    padding: 0 0.8rem !important;
+    margin-left: -5vw !important;
+  }
+}
+@media screen and (min-width: 415px) and (max-width: 960px) {
+  .back_Up {
+    position: absolute;
+    left: 20px;
+    font-size: 5vh;
+  }
+  .header_title {
+    font-size: 5vh;
+    margin-top: 0vh;
+  }
+}
+@media screen and (min-width: 1081px) and (max-width: 1280px) {
+  .back_Up {
+    position: absolute;
+    top: -2px;
+    left: 20px;
+    font-size: 8vh;
+  }
+  .header_title {
+    font-size: 5vh;
+    margin-top: 0vh;
+  }
+}

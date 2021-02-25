@@ -1,0 +1,39 @@
+<!-- <p>change-pw works!</p> -->
+<div class="content">
+  <!-- header -->
+  <div class="header_chane" [ngStyle]="{'background-color': backgroundColor}">
+    <span class="back_Up" (click)="goBack(3)">&lt;</span>
+    <div class="header_title">修改密码</div>
+  </div>
+  <!-- 内容 -->
+  <div class="detail">
+    <div class="detail_userinfo">
+      <input class="user_info" [type]="passwordType" placeholder="请输入旧密码" />
+      <div (click)="seePass()">
+        <img src="./assets/img/can_pwa.png" *ngIf="canSeePass == true"  class="see" [ngClass]="{'see-act': canSeePass === true}">
+        <img src="./assets/img/can_npws.png" *ngIf="canSeePass == false"  class="see" [ngClass]="{'see-act': canSeePass === false}">
+      </div>
+    </div>
+
+    <div class="detail_userinfo">
+      <input class="user_info" type="text" placeholder="请输入新密码" />
+      <div (click)="seePass()">
+        <img src="./assets/img/can_pwa.png" *ngIf="canSeePass == true"  class="see" [ngClass]="{'see-act': canSeePass === true}">
+        <img src="./assets/img/can_npws.png" *ngIf="canSeePass == false"  class="see" [ngClass]="{'see-act': canSeePass === false}">
+      </div>
+    </div>
+
+    <div class="detail_userinfo">
+      <input class="user_info" type="text" placeholder="请重新输入新密码" />
+      <div (click)="seePass()">
+        <img src="./assets/img/can_pwa.png" *ngIf="canSeePass == true"  class="see" [ngClass]="{'see-act': canSeePass === true}">
+        <img src="./assets/img/can_npws.png" *ngIf="canSeePass == false"  class="see" [ngClass]="{'see-act': canSeePass === false}">
+      </div>
+    </div>
+  </div>
+
+  <!-- 按钮 -->
+  <div class="buttons">
+    <div class="buttonUp" (click)="goBack(3)" [ngStyle]="{'background-color': backgroundColor}">确定</div>
+  </div>
+</div>

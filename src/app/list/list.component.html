@@ -1,0 +1,37 @@
+<!-- <p>list works!</p> -->
+<div class="content">
+  <!-- header  -->
+  <div class="header" [ngStyle]="{'background-color': backgroundColor}">
+    <span *ngIf="goto == 0" class="back" (click)="goBack(0)">&lt;</span>
+    <span *ngIf="goto == 1" class="back" (click)="goBack(1)">&lt;</span>
+    <input class="search" type="text" placeholder="搜索..." [(ngModel)]="searchname" >
+    <div class="buttons" >
+      <button (click)="getItems()" class="button"> 搜索</button>
+    </div>
+  </div>
+  <!-- card -->
+  <div class="main" >
+    <ng-container *ngFor="let list of pageList; let i = index">
+      <div *ngIf="goto == 0" class="card" (click)="goDetail(list.id,i,0,list.name,id)">
+          <div class="img" >
+              <img src="{{list.image|formatImg}}" alt="">
+          </div>
+          <div class="container">
+              <p class="card_title">{{list.name}}：</p>
+              <p class="card_content">{{list.description}}</p>
+          </div>
+      </div>
+      <div *ngIf="goto == 1" class="card" (click)="goDetail(list.id,i,1,list.name,id)">
+          <div class="img" >
+              <img src="{{list.image|formatImg}}" alt="">
+          </div>
+          <div class="container">
+              <p class="card_title">{{list.name}}：</p>
+              <p class="card_content">{{list.description}}</p>
+          </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="footer"><span>广州市罗斯泰克科技有限公司&copy;技术支持</span></div>
+</div>
+

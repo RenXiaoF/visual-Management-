@@ -1,0 +1,547 @@
+@import "../../../assets/js/bootstrap.min.css";
+
+/* 最大的容器 */
+.content {
+  width: 100%;
+  height: 100vh;
+  /*background: #0075b8;*/
+  cursor: pointer;
+}
+/* header */
+.header {
+  padding: 1.2vh 2vw 2vh;
+  display: flex;
+}
+.logo img {
+  width: 20vw;
+}
+.header_title {
+  font-size: 3vh;
+  color: white;
+  font-weight: 900;
+  margin-left: 15vw;
+  margin-top: 2vh;
+}
+/* 搜索框 */
+.search {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  display: block;
+  width: 85%;
+  height: 4vh;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  border-radius: 29px;
+  padding-left: 3vw;
+  font-size: 2vh;
+}
+
+.search:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.nav {
+  display: inline;
+}
+
+.nav_ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2vh 0;
+  font-size: 2vh;
+  margin-left: 4vw;
+}
+.nav_ul li {
+  display: inline;
+  color: #f3cf05;
+}
+
+/* swper 轮播 */
+.style {
+  height: 40%;
+  background-color: white;
+}
+.swiper_dev {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.swiper_img {
+  /* width: auto;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%; */
+  width: 100%;
+  height: 100%;
+}
+
+/* 5. 点击分类标题  显示不同的内容 */
+.mian {
+  margin-top: 2vh;
+}
+.index_nav_box {
+  display: inline-block;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  overflow-y: auto;
+}
+.index_nav_box::-webkit-scrollbar {
+  display: none;
+}
+.nav_btn {
+  text-align: center;
+  margin-left: 2vh;
+  margin-bottom: 1vh;
+  display: inline-block; /*行内块元素*/
+}
+.nav_btn img {
+  width: 10vw;
+  border-radius: 5rem;
+}
+.nav_text {
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.7vh;
+}
+
+/* 魔法首页 */
+.mofa {
+  /*background: #0075b8;*/
+  padding-bottom: 22vh;
+}
+/* style_type=66,一行布局 */
+.style_type66 {
+  display: flex;
+  width: 100%;
+  margin-top: 0.5vh;
+}
+.magic_list_img {
+  width: 100%;
+}
+/* // style_type=99,主块多布局布局 左一右三 */
+.style_type99 {
+  display: flex;
+  width: 100%;
+  margin-top: 0.5vh;
+}
+.magic_list_img_d {
+  width: 100%;
+}
+
+/* 6. 通知 */
+#container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  display: flex;
+  font-size: 35px;
+  width: 94%;
+  margin-left: 3%;
+  background-image: linear-gradient(to left, #ffe5b1, #e0b664);
+  border-radius: 2.5rem;
+  position: fixed;
+  bottom: 13vh;
+  height: 6vh;
+}
+
+.container:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.tongzhi {
+  width: 25%;
+  font-size: 2vh;
+  text-align: center;
+  padding: 30px 0;
+}
+
+#static_big_box {
+  font-size: 1.7vh;
+}
+#runing_box div {
+  color: #fff;
+  margin-left: 8px;
+}
+#runing_box div:hover {
+  color: #57bc54;
+}
+#runing_box div {
+  padding: 20px 0;
+}
+
+.box {
+  width: 92vw;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.animate {
+  padding-left: 30vh;
+  margin-top: 0.5vh;
+  font-size: 2vh;
+  color: #000;
+  display: inline-block;
+  white-space: nowrap;
+  /* 动画时间10秒，动画名称worldsLoop，动画速度从头到尾一样，无限循环，正常播放 */
+  animation: 10s wordsLoop linear infinite normal;
+}
+@keyframes wordsLoop {
+  0% {
+    transform: translateX(400px);
+    -webkit-transform: translateX(400px);
+  }
+  100% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes wordsLoop {
+  0% {
+    transform: translateX(400px);
+    -webkit-transform: translateX(400px);
+  }
+  100% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    background-color: #5c7c99;
+  }
+}
+
+@keyframes show {
+  0% {
+    margin-top: -270px;
+  }
+  5% {
+    margin-top: -180px;
+  }
+  33% {
+    margin-top: -180px;
+  }
+  38% {
+    margin-top: -90px;
+  }
+  66% {
+    margin-top: -90px;
+  }
+  71% {
+    margin-top: 0px;
+  }
+  99.99% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -270px;
+  }
+}
+
+/* 7. 版权文字 */
+.footer {
+  position: fixed;
+  bottom: 9.4vh;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+  color: #999;
+}
+
+/* 提醒版本更新 的 弹框 */
+.app-version {
+  position: fixed;
+  top: 17vh;
+  width: 100%;
+  z-index: 999;
+}
+.card {
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 80%;
+  border-radius: 1rem;
+  margin-left: 10%;
+  margin-top: 3vh;
+  background: #ffffff;
+}
+.app-title {
+  font-size: 3vh;
+  height: 6vh;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 2vh;
+  background-color: #e21918;
+  color: white;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.card_container {
+  padding: 60px 70px;
+  height: auto;
+  width: 80%;
+}
+.card_title {
+  /* border-bottom: 0.5px solid #c1c1c1; */
+  padding: 1vh 2vh;
+  font-weight: 600;
+  font-size: 2.5vh;
+}
+.card_content {
+  height: 8vh;
+  padding: 1vh 2vh;
+  /* font-weight: 600; */
+  font-size: 2vh;
+  /* color: #666; */
+}
+.card_buttons {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 2vh;
+}
+.cbut1 {
+  font-size: 2vh;
+  color: #666;
+  background: white;
+  border: 0;
+  padding: 10px 30px;
+}
+.cbut2 {
+  font-size: 2vh;
+  color: white;
+  background: #e21918;
+  border: 0;
+  padding: 10px 30px;
+}
+
+@media screen and (max-width: 320px) {
+  /* swiper 图片的 高度 */
+  .style {
+    height: 35% !important;
+  }
+  /* 滚动的通知 */
+  #container {
+    position: fixed !important;
+    bottom: 17vh !important;
+    height: 6vh !important;
+  }
+  /* 7. 版权文字 */
+  .footer {
+    position: fixed !important;
+    bottom: 12.6vh !important;
+    left: 0 !important;
+    width: 100% !important;
+    font-size: 12px !important;
+  }
+  /* 通知公告 title*/
+  .tongzhi {
+    width: 25% !important;
+    font-size: 2.5vh !important;
+    padding: 7px 0 !important;
+  }
+  /* 通知公告 滚动框 */
+  #runing_box div {
+    padding: 9px 0 !important;
+  }
+  /* 通知公告 内容 */
+  .animate {
+    padding-left: 20px !important;
+    margin-top: -1.5vh !important;
+    font-size: 2.5vh !important;
+  }
+  .card_container {
+    padding: 20px 30px;
+  }
+  .cbut1 {
+    padding: 10px 30px;
+  }
+  .cbut2 {
+    padding: 10px 30px;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  /* swiper 图片的 高度 */
+  .style {
+    height: 40% !important;
+  }
+  /* 滚动的通知 */
+  #container {
+    position: fixed !important;
+    bottom: 15vh !important;
+    height: 5vh !important;
+  }
+  /* 7. 版权文字 */
+  .footer {
+    position: fixed !important;
+    bottom: 10.6vh !important;
+    left: 0 !important;
+    width: 100% !important;
+    font-size: 12px !important;
+  }
+  /* 通知公告 title*/
+  .tongzhi {
+    width: 25% !important;
+    font-size: 2vh !important;
+    padding: 12px 0 !important;
+  }
+  /* 通知公告 滚动框 */
+  #runing_box div {
+    padding: 10px 0 !important;
+  }
+  /* 通知公告 内容 */
+  .animate {
+    padding-left: 20px !important;
+    margin-top: -1.5vh !important;
+    font-size: 2vh !important;
+  }
+  .card_container {
+    padding: 20px 30px;
+  }
+  .cbut1 {
+    padding: 10px 30px;
+  }
+  .cbut2 {
+    padding: 10px 30px;
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 414px) {
+  /* swiper 图片的 高度 */
+  .style {
+    height: 43% !important;
+  }
+  /* 滚动的通知 */
+  #container {
+    position: fixed !important;
+    bottom: 14vh !important;
+    height: 5vh !important;
+  }
+  /* 7. 版权文字 */
+  .footer {
+    position: fixed !important;
+    bottom: 9.6vh !important;
+    left: 0 !important;
+    width: 100% !important;
+    font-size: 12px !important;
+  }
+  /* 通知公告 title*/
+  .tongzhi {
+    width: 25% !important;
+    font-size: 2vh !important;
+    padding: 12px 0 !important;
+  }
+  /* 通知公告 滚动框 */
+  #runing_box div {
+    padding: 11px 0 !important;
+  }
+  /* 通知公告 内容 */
+  .animate {
+    padding-left: 20px !important;
+    margin-top: -1.5vh !important;
+    font-size: 2vh !important;
+  }
+  .card_container {
+    padding: 20px 30px;
+  }
+  .cbut1 {
+    padding: 10px 30px;
+  }
+  .cbut2 {
+    padding: 10px 30px;
+  }
+}
+@media screen and (min-width: 415px) and (max-width: 960px) {
+  .logo img {
+    width: 8vw;
+  }
+  .header_title {
+    font-size: 5vh;
+    margin-left: 26vw;
+  }
+  .style {
+    height: 47%;
+  }
+  .swiper_dev {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  .swiper_img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .nav_text {
+    font-size: 2.7vh;
+  }
+  .nav_ul {
+    font-size: 3vh;
+  }
+  .nav_btn img {
+    width: 5vw;
+  }
+  /* 6. 通知 */
+  #container {
+    width: 85%;
+    bottom: 3vh;
+  }
+  #runing_box div {
+    padding: 9px 0;
+  }
+  .animate {
+    padding-left: 35vw;
+    margin-top: 0vh;
+  }
+  /* 7. 版权文字 */
+  .footer {
+    bottom: 0.1vh;
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 1081px) and (max-width: 1280px) {
+  .logo img {
+    width: 8vw;
+  }
+  .header_title {
+    font-size: 5vh;
+    margin-left: 26vw;
+  }
+  .style {
+    height: 47%;
+  }
+  .swiper_dev {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  .swiper_img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .nav_text {
+    font-size: 2.7vh;
+  }
+  .nav_ul {
+    font-size: 3vh;
+  }
+  .nav_btn img {
+    width: 5vw;
+  }
+  /* 6. 通知 */
+  #container {
+    width: 85%;
+    bottom: 2.5vh;
+  }
+  #runing_box div {
+    padding: 13px 0;
+  }
+  .animate {
+    padding-left: 47vw;
+    margin-top: 0vh;
+  }
+  /* 7. 版权文字 */
+  .footer {
+    bottom: 0.1vh;
+    font-size: 12px;
+  }
+}

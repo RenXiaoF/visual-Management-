@@ -1,0 +1,96 @@
+  /* < 720px */
+  @media screen and (width: 320px){
+
+    .search , .nav_ul, .nav_text , .container, .tongzhi ,#runing_box , .user_info
+    , .symbol, .detail_userinfo
+  {
+    font-size: 13px !important;
+  }
+  .swiper-slide img{
+    width: 99vw;
+    height: 82%;
+  }
+  .my-swiper {
+    height: 40%;
+    margin: 0px auto -20px;
+ }
+ .tongzhi{
+
+  padding: 8px 0 !important;
+ }
+ #runing_box>div{
+  padding: 8px 0 !important;
+ }
+ .index_nav_box{
+   margin-top: 0 !important;
+ }
+ .header_title{
+  font-size: 3vh !important;
+ }
+ .button {
+  padding: 6px 13px !important ;
+  font-size: 3vh !important;
+}
+.cate-item{
+  width: 29% !important;
+}
+.s-item{
+  font-size: 0.5rem !important ;
+  height: 2.7rem !important ;
+}
+.f-item{
+  font-size: 2.3vh !important;
+}
+.card_title{
+  font-size: 2vh !important;
+}
+.card_content{
+  font-size: 1.1rem !important;
+}
+.jiantou{
+  font-size: 1rem !important;
+}
+.back {
+  position: absolute !important;
+  left: 20px !important;
+  font-size: 2.4rem !important;
+  top: 13px !important;
+}
+.info_title , .label , .value, .woship{
+  font-size: 1rem !important;
+}
+.info_title{
+  margin-top: 0 !important;
+}
+.footer_Gy{
+  font-size:1rem !important;
+}
+.user_content{
+  padding-top: 4vh !important;
+}
+.header_content{
+  height:  16% !important;
+}
+.buttons{
+  margin: 0;
+}
+.detail_userinfo input{
+  margin-right: 19%;
+}
+.back_Up{
+  position: absolute !important;
+  left: 20px !important;
+  font-size: 2rem !important;
+  top: 7px !important;
+}
+/* 7. 版权文字 */
+.footer {
+  position: absolute !important;
+  bottom: 6.4vh !important;
+  left: 0 !important;
+  width: 100% !important;
+  text-align: center !important;
+  font-size: 12px !important;
+  color: #999 !important;
+}
+}

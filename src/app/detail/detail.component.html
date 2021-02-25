@@ -1,0 +1,165 @@
+<!-- <p>detail works!</p> -->
+<div class="content">
+  <!-- 工艺详情 的 标题 -->
+  <div class="header_content" [ngStyle]="{'background-color': backgroundColor}">
+    <div class="header">
+      <span *ngIf="goto == 0" class="back" (click)="goBack(0,cat_id)">&lt;</span>
+      <span *ngIf="goto == 1" class="back" (click)="goBack(1,cat_id)">&lt;</span>
+      <div class="header_title">{{titleName}}</div>
+    </div>
+  </div>
+
+  <!-- word 或者 excel 测试 -->
+  <!-- <div style="width: 100%; margin-top: 9.5vh;" [ngStyle]="{'background-color': backgroundColor}">
+    <div style="width: 92%; height: 100vh; margin-left: 4%;" *ngIf="houzhui == '.docx'">
+      <div style="width: 100%; height: 100%;">
+        <iframe style="height: 100vh; width: 100%;" [src]="str"></iframe>
+      </div>
+    </div>
+  </div> -->
+  <!-- 内容 -->
+  <div class="main" [ngStyle]="{'background-color': backgroundColor}">
+
+    <!-- type 1 图片 -->
+    <div class="img" *ngIf="type == 1">
+      <img  src="{{ technologyDetail.image | formatImg }}" alt="" />
+    </div>
+    <!-- type 2  视频 -->
+    <div class="img" *ngIf="type == 2">
+      <!-- loading start-->
+      <ng-container *ngIf="isLoading == true">
+        <div class="container">
+          <span class="girl"></span>
+          <div class="boys">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </ng-container>
+      <!-- loading end-->
+      <div style="width: 100%; height: 100%;">
+        <iframe style="height: 100%; width: 100%;" [src]="jumpLink"></iframe>
+      </div>
+    </div>
+    <!-- type 3  PDF文件 -->
+    <div class="" *ngIf="type == 3">
+      <!-- <div style="background-color: #0075b8;"> -->
+      <div>
+        <iframe style="height: 100vh; width: 100%;" [src]="jumpLink2"></iframe>
+      </div>
+    </div>
+    <!-- type  5 ERP 数据明细 -->
+    <div class="div-iframe" *ngIf="type == 5">
+      <!-- 日期选择器 -->
+      <div class="pick_time">
+        <!-- 开始日期 -->
+        <div>
+          <input [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" [(ngModel)]="selectedMomentsFrom" placeholder="开始日期" />
+          <owl-date-time #dt1 pickerType="calendar"></owl-date-time>
+        </div>
+        <!-- 结束日期 -->
+        <div>
+          <input [owlDateTime]="dt2" [owlDateTimeTrigger]="dt2" [(ngModel)]="selectedMomentsTo" placeholder="结束日期" />
+          <owl-date-time #dt2 pickerType="calendar"></owl-date-time>
+        </div>
+        <!-- 输入的关键字 -->
+        <div class="input_box">
+          <input class="search" type="text" placeholder="搜索..." [(ngModel)]="searchname" />
+          <div class="buttons">
+            <!--<button *ngIf="selectedMomentsFrom && selectedMomentsTo && searchname" (click)="getItems01()" class="button" >-->
+              <!--搜索-->
+            <!--</button>-->
+            <button (click)="getItems02(template)" class="button" >
+              搜索
+            </button>
+          </div>
+        </div>
+      </div>
+      <iframe style="height: 100vh; width: 99%;" [src]="jumpLink2"></iframe>
+    </div>
+
+    <!-- type 1  /  2 -->
+    <div class="info" *ngIf="(type == 1 || type == 2) && (technologyDetail.is_company_culture == '0')" [ngStyle]="{'background-color': backgroundColor}">
+      <div class="info_title">方法一：{{ technologyDetail.name }}</div>
+      <div class="content">
+        <div class="info_box">
+          <div>
+            <span class="label">日&nbsp;&nbsp;&nbsp;期：</span>
+            <span class="value">{{ timeCuo }}</span>
+          </div>
+          <div>
+            <span class="label">制单号：</span>
+            <span class="value">{{ technologyDetail.mpscode }}</span>
+          </div>
+          <div>
+            <span class="label">布&nbsp;&nbsp;&nbsp;种：</span>
+            <span class="value">{{ technologyDetail.cloth_type }}</span>
+          </div>
+        </div>
+        <div class="info_box">
+          <div>
+            <span class="label">款 式：</span>
+            <span class="value">{{ technologyDetail.style }}</span>
+          </div>
+          <div>
+            <span class="label">参考款号：</span>
+            <span class="value">{{ technologyDetail.stylecode }}</span>
+          </div>
+          <div>
+            <span class="label">使用部位：</span>
+            <span class="value">{{ technologyDetail.position }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="(type == 1 || type == 2) && (technologyDetail.is_company_culture == '0')" [ngStyle]="{'background-color': backgroundColor}">
+      <div class="text">
+        <div class="info_title">要求及做法</div>
+        <p class="woship" [innerHtml]="technologyDetail.content"></p>
+      </div>
+      <div class="remark">
+        <div class="info_title">备注：</div>
+        <p>{{ technologyDetail.remark }}</p>
+      </div>
+    </div>
+
+    <!--企业文化的简介内容-->
+    <div *ngIf="technologyDetail.is_company_culture == '1'" [ngStyle]="{'background-color': backgroundColor}">
+      <div class="remark">
+        <div class="info_title">简介：</div>
+        <p>{{ technologyDetail.remark }}</p>
+      </div>
+    </div>
+  </div>
+  <!-- <div *ngIf="type == 1 || type == 2" class="footer_Gy">
+    <span>广州市罗斯泰克科技有限公司&copy;技术支持</span>
+  </div> -->
+</div>
+
+<!-- 弹框  弹出一个order_id 的列表 -->
+<ng-template #template>
+  <div class="madal_box">
+    <div class="modal-header">
+      <h4 class="modal-title pull-left modal_title">请选择制单号</h4>
+      <button type="button" class="close pull-right button_close" aria-label="Close" (click)="modalRef.hide()"  >
+        <span aria-hidden="true" style="font-size: 2vh;">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body modal_body">
+      <!-- 内容 -->
+      <div class="detail" *ngFor="let orderid of orderIdList; let i = index">
+        <div class="detail_userinfo2" (click)="enSure(i); modalRef.hide()">
+          款号:{{
+            orderid.code
+          }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;制单号:{{
+            orderid.mpsid
+          }}
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+

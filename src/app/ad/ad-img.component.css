@@ -1,0 +1,86 @@
+.content {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  /* background: #3880FF; */
+}
+/* header */
+.header {
+  /*padding: 10px;*/
+  /*background: #0075b8;*/
+  height: 8vh;
+  padding-top: 2vh;
+  position: fixed;
+  top: 0vh;
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
+}
+.back {
+  position: absolute;
+  left: 20px;
+  font-size: 6vh;
+  top: 10px;
+  width: 15vw;
+  height: 9vh;
+}
+.header_title {
+  font-size: 3vh;
+  margin-top: 1vh;
+}
+
+/* 图表 */
+img {
+  width: 100%;
+  margin-top: 6vh;
+}
+
+.div-iframe {
+  padding-top: 10vh;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 320px) {
+  .back {
+    position: absolute !important;
+    left: -3px !important;
+    font-size: 5vh !important;
+    top: 1.5vh !important;
+  }
+  .header_title {
+    font-size: 16px !important;
+  }
+}
+@media screen and (max-width: 375px) {
+  .back {
+    position: absolute !important;
+    left: -3px !important;
+    font-size: 5vh !important;
+    top: 1.5vh !important;
+  }
+  .header_title {
+    font-size: 18px !important;
+  }
+}
+@media screen and (max-width: 414px) {
+  .back {
+    position: absolute !important;
+    left: -3px !important;
+    font-size: 5vh !important;
+    top: 1.5vh !important;
+  }
+  .header_title {
+    font-size: 20px !important;
+  }
+}
+@media screen and (min-width: 415px) and (max-width: 960px) {
+  .back {
+    top: 8px;
+    width: 8vw;
+  }
+  .header_title {
+    font-size: 5vh;
+    margin-top: 0vh;
+  }
+}

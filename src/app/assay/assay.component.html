@@ -1,0 +1,28 @@
+<!-- <p>选择工号信息</p> -->
+<div class="content">
+  <!-- header -->
+  <div class="header" [ngStyle]="{'background-color': backgroundColor}">
+    <span class="back" (click)="goBack()">&lt;</span>
+    <div class="header_title">选择工号信息</div>
+  </div>
+  <!-- 工号信息 列表 -->
+  <div class="useringo">
+    <!-- 搜索 -->
+    <div  class="big_search">
+      <input class="search" type="text" placeholder="搜索..." [(ngModel)]="searchname" >
+      <div class="buttons" >
+        <button (click)="getItems()" class="button"> 搜索</button>
+      </div>
+    </div>
+    <!-- 工号信息 列表 -->
+    <div class="detail_userinfo" *ngFor="let employee of employeeList; let i = index">
+      <div style="padding-right: 2vh;" (click)="goBackP(employee.content,employee.EmployeeID,employee.EmployeeNM, i)" >
+        <p>{{employee.title}}</p>
+        <p style="color: #666;">{{employee.content}}</p>
+          <!-- {{employee.DeptID}}/ {{employee.Deptnm}} -->
+      </div>
+    </div>
+
+  </div>
+
+</div>

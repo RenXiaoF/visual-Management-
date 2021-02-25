@@ -1,0 +1,26 @@
+<!-- <p>department-list works!</p> -->
+<div class="content">
+  <!-- header -->
+  <div class="header" [ngStyle]="{'background-color': backgroundColor}">
+    <span class="back" (click)="goBack()">&lt;</span>
+    <div class="header_title">选择所属部门</div>
+  </div>
+  <!-- 个人信息 -->
+  <div class="useringo">
+    <!-- 搜索 -->
+    <div>
+      <input class="search" type="text" placeholder="搜索..." [(ngModel)]="searchname" >
+      <div class="buttons" >
+        <button (click)="searchItem()" class="button"> 搜索</button>
+      </div>
+    </div>
+    <!-- 公司列表 -->
+    <div class="detail_userinfo" *ngFor="let department of departmentList; let i = index">
+      <div style="padding-right: 2vh;margin-left: 2vh;" (click)="goBackP(department.group_name, department.group_id, i)" >
+        {{department.group_name}}
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,310 @@
+.content {
+  width: 100%;
+  height: 100vh;
+  cursor: pointer;
+  /* background-color: #0075b8; */
+}
+.header {
+  padding: 10px;
+  /*background-color: #0075b8;*/
+  height: 8vh;
+  padding-top: 2vh;
+  position: fixed;
+  top: 0vh;
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
+}
+
+.back {
+  position: absolute;
+  left: -14px;
+  font-size: 6vh;
+  top: 1vh;
+  width: 15vw;
+  height: 9vh;
+}
+
+/* 搜索框 */
+.search {
+  width: 60%;
+  height: 6vh;
+  margin-left: -11vw;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border-radius: 5rem;
+  padding-left: 3vh;
+  font-size: xx-large;
+}
+.buttons {
+}
+.button {
+  color: white;
+  border: 1px solid #3c82fc;
+  margin-left: 3vw;
+  padding: 1.5vh 3vh;
+  font-size: 2vh;
+  position: fixed;
+  top: 2.5vh;
+  right: 1vw;
+  border-radius: 5rem;
+  background-color: #3c82fc;
+  /* box-shadow: 5px 5px 10px 5px #3c82fc; */
+}
+/* 卡片 */
+.main {
+  margin-top: 13vh;
+  margin-bottom: 3vh;
+  /* background-color: #0075b8; */
+  /* padding-bottom: 5vh; */
+}
+.card {
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 80%;
+  border-radius: 5px;
+  margin-left: 10%;
+  margin-top: 3vh;
+  display: flex;
+  background: #ffffff;
+
+  justify-content: center;
+  align-items: center;
+}
+.card .img {
+  width: 30%;
+  background-color: #ffffff;
+  margin-right: 20px;
+}
+
+.img img {
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.container {
+  padding: 2px 16px;
+  height: auto;
+  width: 60%;
+}
+.card_title {
+  border-bottom: 0.5px solid #c1c1c1;
+  padding: 1vh 2vh;
+  font-weight: 600;
+  font-size: xx-large;
+}
+.card_content {
+  height: 8vh;
+  padding: 1vh 2vh;
+  height: 4vh;
+  font-weight: 600;
+  font-size: x-large;
+  color: #666;
+}
+
+.footer {
+  position: fixed;
+  bottom: 1vh;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: x-large;
+  color: #999;
+  /* background-color: #0075b8; */
+}
+
+@media screen and (max-width: 320px) {
+  .back {
+    position: absolute !important;
+    left: -3px !important;
+    font-size: 5vh !important;
+    top: 1.5vh !important;
+  }
+  .search {
+    font-size: 12px !important;
+    width: 55% !important;
+  }
+  .button {
+    font-size: 12px !important;
+  }
+  .card {
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2) !important;
+  }
+  .card_title {
+    font-size: 12px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  .card_content {
+    font-size: 12px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  .img img {
+    margin-left: 2vh !important;
+  }
+  .footer {
+    font-size: 12px !important;
+    position: fixed !important;
+    bottom: 0vh !important;
+    left: 0 !important;
+  }
+}
+@media screen and (max-width: 375px) {
+  .back {
+    position: absolute !important;
+    left: -3px !important;
+    font-size: 5vh !important;
+    top: 1.5vh !important;
+  }
+  .search {
+    font-size: 12px !important;
+    width: 55% !important;
+  }
+  .button {
+    font-size: 12px !important;
+  }
+  .card {
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2) !important;
+  }
+  .card_title {
+    font-size: 12px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  .card_content {
+    font-size: 12px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  .img img {
+    margin-left: 2vh !important;
+  }
+  .footer {
+    font-size: 12px !important;
+    position: fixed !important;
+    bottom: 0vh !important;
+    left: 0 !important;
+  }
+}
+@media screen and (max-width: 414px) {
+  .back {
+    position: absolute !important;
+    left: -3px !important;
+    font-size: 5vh !important;
+    top: 1.5vh !important;
+  }
+  .search {
+    font-size: 12px !important;
+    width: 55% !important;
+  }
+  .button {
+    font-size: 12px !important;
+  }
+  .card {
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2) !important;
+  }
+  .card_title {
+    font-size: 12px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  .card_content {
+    font-size: 12px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  .img img {
+    margin-left: 2vh !important;
+  }
+  .footer {
+    font-size: 12px !important;
+    position: fixed !important;
+    bottom: 0vh !important;
+    left: 0 !important;
+  }
+}
+@media screen and (min-width: 415px) and (max-width: 960px) {
+  .search {
+    font-size: x-large;
+  }
+  .button {
+    position: fixed;
+    top: 2.5vh;
+    right: 4vw;
+  }
+  .card {
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  }
+  .card .img {
+    width: 30%;
+    background-color: #ffffff;
+    margin-left: 5%;
+  }
+  .img img {
+    width: auto;
+    max-width: 50%;
+    max-height: 100%;
+  }
+  .card_title {
+    font-size: x-large;
+  }
+  .card_content {
+    font-size: large;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .footer {
+    font-size: small;
+  }
+}
+@media screen and (min-width: 1081px) and (max-width: 1280px) {
+  .search {
+    font-size: x-large;
+  }
+  .button {
+    position: fixed;
+    top: 2.5vh;
+    right: 4vw;
+  }
+  .card {
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  }
+  .card .img {
+    width: 30%;
+    background-color: #ffffff;
+    margin-left: 5%;
+  }
+  .img img {
+    width: auto;
+    max-width: 50%;
+    max-height: 100%;
+  }
+  .card_title {
+    font-size: x-large;
+  }
+  .card_content {
+    font-size: large;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .footer {
+    font-size: small;
+  }
+}

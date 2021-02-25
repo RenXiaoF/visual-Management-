@@ -1,0 +1,283 @@
+.content {
+  cursor: pointer;
+}
+/* header */
+.header {
+  height: 8vh;
+  padding-top: 2vh;
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
+}
+.back {
+  position: absolute;
+  left: 20px;
+  font-size: 80px;
+}
+.header_title {
+  font-size: 3vh;
+  margin-top: 1vh;
+}
+
+/* 二维码 */
+.qrcode-img {
+  margin-top: 1vh;
+  top: 30vh;
+  height: 20vh;
+  font-size: 1.5vh;
+  width: 100%;
+  height: 228px;
+  text-align: center;
+}
+
+/* 内容 */
+/* 账号密码 / 验证码 登陆   按钮切换 */
+.switch_type {
+  position: fixed;
+  top: 70vh;
+  height: 5vh;
+  font-size: 3vh;
+  display: flex;
+  margin-left: 14vw;
+}
+.login-type-col {
+  /* border-top: .55px solid #eee;
+  border-left: .55px solid #eee;
+  border-right: .55px solid #eee;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px; */
+  /*border-bottom: 0.55px solid #eee;*/
+}
+.ipdl {
+  margin-left: 25vw;
+}
+.login-type-action {
+  /* border-top: .55px solid #3880ff;
+  border-left: .55px solid #3880ff;
+  border-right: .55px solid #3880ff; */
+  /*border-bottom: 0.55px solid #3880ff;*/
+  color: #3880ff;
+}
+
+/* 账号密码 */
+.detail {
+  height: 80%;
+  margin-top: 5vh;
+}
+.detail_userinfo {
+  display: flex;
+  justify-content: flex-start;
+  height: 4vh;
+  margin-left: 6%;
+  padding: 3vh 0;
+  border-bottom: 0.5px solid #c1c1c1;
+}
+.see {
+  padding: 0 0.8rem;
+}
+.see-act {
+  width: 5vh;
+  color: #3880ff;
+}
+.get_code {
+  margin-right: 3%;
+  font-size: 2vh;
+  height: 2.8em;
+  background-color: #3c82fc;
+  color: white;
+  border: 1px solid #3c82fc;
+  width: 35%;
+  border-radius: 1rem;
+}
+.user_info {
+  width: 50%;
+  font-size: 3vh;
+}
+.symbol {
+  width: 20%;
+  padding-right: 2vh;
+  font-size: 50px;
+}
+
+/* 按钮 */
+.buttons {
+  width: 80%;
+  margin-left: 10%;
+  margin: 2vh 0;
+}
+.buttonLogin {
+  position: fixed;
+  left: 5%;
+  top: 58vh;
+  background-color: #3880ff;
+  border-radius: 5rem;
+  color: white;
+  text-align: center;
+  padding: 2vh 0;
+  font-size: 3vh;
+  width: 90%;
+}
+
+@media screen and (max-width: 320px) {
+  .header_title {
+    font-size: 18px !important;
+    margin-top: 1vh !important;
+  }
+  .symbol {
+    font-size: 14px !important;
+  }
+  .qrcode-img {
+    display: none;
+  }
+}
+@media screen and (max-width: 375px) {
+  .header_title {
+    font-size: 20px !important;
+    margin-top: 1vh !important;
+  }
+  .symbol {
+    font-size: 16px !important;
+  }
+  .qrcode-img {
+    display: none;
+  }
+}
+@media screen and (max-width: 414px) {
+  .header_title {
+    font-size: 20px !important;
+    margin-top: 1vh !important;
+  }
+  .symbol {
+    font-size: 18px !important;
+  }
+  .qrcode-img {
+    display: none;
+  }
+}
+@media screen and (min-width: 415px) and (max-width: 960px) {
+  /* content_con */
+  .content_con {
+    display: flex;
+  }
+  .content_qr {
+    width: 40%;
+  }
+  .content_input {
+    width: 60%;
+  }
+  .switch_type {
+    position: fixed;
+    top: 70vh;
+    display: flex;
+    margin-left: 7vw;
+}
+  .detail {
+    height: 80%;
+    width: 90%;
+    margin-top: 5vh;
+  }
+  .symbol {
+    width: 26%;
+    padding-right: 2vh;
+    font-size: 23px !important;
+    margin-left: 2vw !important;
+}
+  .buttons {
+    width: 60%;
+    margin-left: 10%;
+    margin: 2vh 0;
+  }
+  .buttonLogin {
+    position: fixed;
+    left: 40%;
+    top: 58vh;
+    background-color: #3880ff;
+    border-radius: 5rem;
+    color: white;
+    text-align: center;
+    padding: 2vh 0;
+    font-size: 3vh;
+    width: 55%;
+  }
+  .detail_userinfo {
+    height: 5vh !important;
+  }
+  .ipdl {
+    /* margin-left: 55vw !important; */
+  }
+  /* .header_title {
+    font-size: 5vh !important;
+    margin-top: 0vh !important;
+  }
+  .detail {
+    width: 95% !important;
+  }
+  .symbol {
+    font-size: large !important;
+    margin-left: 2vw !important;
+  }
+  .ipdl {
+    margin-left: 55vw !important;
+  }
+  .qrcode-img {
+    height: 42vh;
+  }
+  .buttonLogin {
+    top: 80vh;
+  }
+  .switch_type {
+    top: 91vh;
+  } */
+}
+@media screen and (min-width: 1081px) and (max-width: 1280px) {
+  /* content_con */
+  .content_con {
+    display: flex;
+  }
+  .content_qr {
+    width: 40%;
+  }
+  .content_input {
+    width: 60%;
+  }
+  .switch_type {
+    position: fixed;
+    top: 70vh;
+    display: flex;
+    margin-left: 7vw;
+}
+  .detail {
+    height: 80%;
+    width: 90%;
+    margin-top: 5vh;
+  }
+  .symbol {
+    width: 26%;
+    padding-right: 2vh;
+    font-size: 30px !important;
+    margin-left: 2vw !important;
+}
+  .buttons {
+    width: 60%;
+    margin-left: 10%;
+    margin: 2vh 0;
+  }
+  .buttonLogin {
+    position: fixed;
+    left: 40%;
+    top: 58vh;
+    background-color: #3880ff;
+    border-radius: 5rem;
+    color: white;
+    text-align: center;
+    padding: 2vh 0;
+    font-size: 3vh;
+    width: 55%;
+  }
+  .detail_userinfo {
+    height: 5vh !important;
+  }
+  .ipdl {
+    /* margin-left: 55vw !important; */
+  }
+}

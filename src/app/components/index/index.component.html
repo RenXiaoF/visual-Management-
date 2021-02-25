@@ -1,0 +1,644 @@
+<!-- <p>index works!</p> -->
+<div class="content" [ngStyle]="{'background-color': backgroundColor}">
+  <!-- 1. header -->
+    <div class="header">
+        <!-- <div class="logo"><img src="./assets/img/logo2.png" alt=""></div> -->
+        <div class="logo"><img src="{{store_logo|formatImg}}" alt=""></div>
+        <div  class="header_title">目视化管理</div>
+        <!-- <input class="search" type="text" placeholder="搜索..." (click)="goListSearch(true)"> -->
+    </div>
+    <!-- 2. 搜索框 -->
+    <div>
+      <input class="search" type="text" placeholder="搜索..." (click)="goListSearch(0)">
+    </div>
+    <!-- 3. 分类 标题 -->
+    <div class="nav">
+        <ul class="nav_ul">
+          <li  *ngFor="let partType of categoryList;let i=index" [ngStyle]="{'color': isCheckedCategory==i? '#f3cf05':'#ffffff','font-weight': isCheckedCategory==i? 'bold':''}"
+            (click)="selectCategory(i)">
+            {{partType.name}}
+          <li>
+        </ul>
+    </div>
+    <!-- 4. swiper -->
+    <ng-container *ngIf="swiperLength == 1">
+      <div id="demo" class="carousel slide style" data-ride="carousel" [ngStyle]="{'background-color': backgroundColor}" >
+        <!-- 指示符 -->
+        <ul class="carousel-indicators" >
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+
+        </ul>
+        <!-- 轮播图片 -->
+        <div class="carousel-inner" style="height: 100%;" [ngStyle]="{'background-color': backgroundColor}">
+          <div class="carousel-item active swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList1[0].image | formatImg}}"  class="swiper_img">
+          </div>
+        </div>
+        <!-- 左右切换按钮 -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="swiperLength == 2">
+      <div id="demo" class="carousel slide style" data-ride="carousel" [ngStyle]="{'background-color': backgroundColor}">
+        <!-- 指示符 -->
+        <ul class="carousel-indicators" >
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+        </ul>
+        <!-- 轮播图片 -->
+        <div class="carousel-inner" style="height: 100%;" [ngStyle]="{'background-color': backgroundColor}">
+          <div class="carousel-item active swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList2[0].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList2[1].image|formatImg}}"  class="swiper_img">
+          </div>
+        </div>
+        <!-- 左右切换按钮 -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="swiperLength == 3">
+      <div id="demo" class="carousel slide style" data-ride="carousel" [ngStyle]="{'background-color': backgroundColor}" >
+        <!-- 指示符 -->
+        <ul class="carousel-indicators" >
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        <!-- 轮播图片 -->
+        <div class="carousel-inner" style="height: 100%;" [ngStyle]="{'background-color': backgroundColor}">
+          <div class="carousel-item active swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList3[0].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList3[1].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList3[2].image|formatImg}}"  class="swiper_img">
+          </div>
+        </div>
+        <!-- 左右切换按钮 -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="swiperLength == 4">
+      <div id="demo" class="carousel slide style" data-ride="carousel" [ngStyle]="{'background-color': backgroundColor}" >
+        <!-- 指示符 -->
+        <ul class="carousel-indicators" >
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+          <li data-target="#demo" data-slide-to="3"></li>
+        </ul>
+        <!-- 轮播图片 -->
+        <div class="carousel-inner" style="height: 100%;" [ngStyle]="{'background-color': backgroundColor}">
+          <div class="carousel-item active swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList4[0].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList4[1].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList4[2].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList4[3].image|formatImg}}"  class="swiper_img">
+          </div>
+        </div>
+        <!-- 左右切换按钮 -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="swiperLength == 5">
+      <div id="demo" class="carousel slide style" data-ride="carousel" [ngStyle]="{'background-color': backgroundColor}" >
+        <!-- 指示符 -->
+        <ul class="carousel-indicators" >
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+          <li data-target="#demo" data-slide-to="3"></li>
+          <li data-target="#demo" data-slide-to="4"></li>
+        </ul>
+        <!-- 轮播图片 -->
+        <div class="carousel-inner" style="height: 100%;" [ngStyle]="{'background-color': backgroundColor}">
+          <div class="carousel-item active swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList5[0].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList5[1].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList5[2].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList5[3].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList5[4].image|formatImg}}"  class="swiper_img">
+          </div>
+        </div>
+        <!-- 左右切换按钮 -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="swiperLength == 6">
+      <div id="demo" class="carousel slide style" data-ride="carousel" [ngStyle]="{'background-color': backgroundColor}" >
+        <!-- 指示符 -->
+        <ul class="carousel-indicators" >
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+          <li data-target="#demo" data-slide-to="3"></li>
+          <li data-target="#demo" data-slide-to="4"></li>
+          <li data-target="#demo" data-slide-to="5"></li>
+        </ul>
+        <!-- 轮播图片 -->
+        <div class="carousel-inner" style="height: 100%;" [ngStyle]="{'background-color': backgroundColor}">
+          <div class="carousel-item active swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList6[0].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList6[1].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList6[2].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList6[3].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList6[4].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList6[5].image|formatImg}}"  class="swiper_img">
+          </div>
+        </div>
+        <!-- 左右切换按钮 -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="swiperLength == 7">
+      <div id="demo" class="carousel slide style" data-ride="carousel" [ngStyle]="{'background-color': backgroundColor}">
+        <!-- 指示符 -->
+        <ul class="carousel-indicators" >
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+          <li data-target="#demo" data-slide-to="3"></li>
+          <li data-target="#demo" data-slide-to="4"></li>
+          <li data-target="#demo" data-slide-to="5"></li>
+          <li data-target="#demo" data-slide-to="6"></li>
+        </ul>
+        <!-- 轮播图片 -->
+        <div class="carousel-inner" style="height: 100%;" [ngStyle]="{'background-color': backgroundColor}" >
+          <!-- <div class="carousel-item active swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList7[0].image|formatImg}}"  class="swiper_img">
+          </div> -->
+          <div class="carousel-item active swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList7[0].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList7[1].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList7[2].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList7[3].image|formatImg}}"   class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList7[4].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList7[5].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList7[6].image|formatImg}}"  class="swiper_img">
+          </div>
+        </div>
+        <!-- 左右切换按钮 -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="swiperLength == 8">
+      <div id="demo" class="carousel slide style" data-ride="carousel" [ngStyle]="{'background-color': backgroundColor}">
+        <!-- 指示符 -->
+        <ul class="carousel-indicators" >
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+          <li data-target="#demo" data-slide-to="3"></li>
+          <li data-target="#demo" data-slide-to="4"></li>
+          <li data-target="#demo" data-slide-to="5"></li>
+          <li data-target="#demo" data-slide-to="6"></li>
+          <li data-target="#demo" data-slide-to="7"></li>
+        </ul>
+        <!-- 轮播图片 -->
+        <div class="carousel-inner" style="height: 100%;" [ngStyle]="{'background-color': backgroundColor}">
+          <div class="carousel-item active swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList8[0].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList8[1].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList8[2].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList8[3].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList8[4].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList8[5].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList8[6].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList8[7].image|formatImg}}"  class="swiper_img">
+          </div>
+        </div>
+        <!-- 左右切换按钮 -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="swiperLength == 9">
+      <div id="demo" class="carousel slide style" data-ride="carousel" [ngStyle]="{'background-color': backgroundColor}" >
+        <!-- 指示符 -->
+        <ul class="carousel-indicators" >
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+          <li data-target="#demo" data-slide-to="3"></li>
+          <li data-target="#demo" data-slide-to="4"></li>
+          <li data-target="#demo" data-slide-to="5"></li>
+          <li data-target="#demo" data-slide-to="6"></li>
+          <li data-target="#demo" data-slide-to="7"></li>
+          <li data-target="#demo" data-slide-to="8"></li>
+        </ul>
+        <!-- 轮播图片 -->
+        <div class="carousel-inner" style="height: 100%;" [ngStyle]="{'background-color': backgroundColor}">
+          <div class="carousel-item active swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList9[0].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList9[1].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList9[2].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList9[3].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList9[4].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList9[5].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList9[6].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList9[7].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList9[8].image|formatImg}}"  class="swiper_img">
+          </div>
+        </div>
+        <!-- 左右切换按钮 -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="swiperLength >= 10">
+      <div id="demo" class="carousel slide style" data-ride="carousel" [ngStyle]="{'background-color': backgroundColor}" >
+        <!-- 指示符 -->
+        <ul class="carousel-indicators" >
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+          <li data-target="#demo" data-slide-to="3"></li>
+          <li data-target="#demo" data-slide-to="4"></li>
+          <li data-target="#demo" data-slide-to="5"></li>
+          <li data-target="#demo" data-slide-to="6"></li>
+          <li data-target="#demo" data-slide-to="7"></li>
+          <li data-target="#demo" data-slide-to="8"></li>
+          <li data-target="#demo" data-slide-to="9"></li>
+        </ul>
+        <!-- 轮播图片 -->
+        <div class="carousel-inner" style="height: 100%;" [ngStyle]="{'background-color': backgroundColor}">
+          <!-- <div class="carousel-item active swiper_dev" >
+            <img src="{{swiperList10[0].image|formatImg}}" class="swiper_img">
+          </div> -->
+          <div class="carousel-item active swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList10[0].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList10[1].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList10[2].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList10[3].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList10[4].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList10[5].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList10[6].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList10[7].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList10[8].image|formatImg}}"  class="swiper_img">
+          </div>
+          <div class="carousel-item swiper_dev" [ngStyle]="{'background-color': backgroundColor}">
+            <img src="{{swiperList10[9].image|formatImg}}"  class="swiper_img">
+          </div>
+        </div>
+        <!-- 左右切换按钮 -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </ng-container>
+
+
+    <!-- 5. 点击分类标题  显示不同的内容-->
+    <div class="mian">
+      <div class="index_nav_box" *ngIf="isCheckedCategory == index">
+        <ng-container *ngFor="let fitem of categoryListItem">
+          <div class="nav_btn" >
+            <div (click)="goList(fitem.id,0)">
+              <img src="{{fitem.image|formatImg}}" alt="">
+              <div class="nav_text"><span>{{fitem.name}}</span></div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- 魔法首页 -->
+    <div *ngIf="items.length > 0" class="mofa">
+      <div  *ngFor="let magic of items; let i = index">
+        <!--style_type=66,一行布局-->
+        <ng-container *ngIf="magic.mag_type == 66">
+          <div class="style_type66" >
+            <!-- 一张图片 -->
+            <ng-container *ngIf="magic.mag_json.dh_num == 1">
+              <div *ngFor="let item of magic.mag_json.img_list;let i = index" style="margin-bottom: -3px;">
+                <!-- 类型 0：没有跳转链接 -->
+                <ng-container *ngIf="item.type_img == 0">
+                  <!-- <div [ngStyle]="{'flex':item.ge_img}" (click)="openLink(item.url_img)">
+                    <img class="magic_list_img"  src="{{item.img | formatImg}}" [ngStyle]="{'height':magic.height}">
+                  </div> -->
+                  <a [ngStyle]="{'flex':item.ge_img}" href="{{item.url_img}}" >
+                    <img class="magic_list_img"  src="{{item.img | formatImg}}" [ngStyle]="{'height':magic.height}">
+                  </a>
+                  <!-- <iframe [ngStyle]="{'flex':item.ge_img}" src="{{item.url_img}}" >
+                    <img class="magic_list_img"  src="{{item.img | formatImg}}" [ngStyle]="{'height':magic.height}">
+                  </iframe> -->
+                </ng-container>
+
+                <!-- 类型 1：跳转商品类别 -->
+                <ng-container *ngIf="item.type_img == 1">
+                  <div [ngStyle]="{'flex':item.ge_img}" (click)="goList(item.cate_id,0)">
+                    <img class="magic_list_img"  src="{{item.img | formatImg}}">
+                  </div>
+                </ng-container>
+
+                <!-- 类型  2：跳商品详情 -->
+                  <ng-container *ngIf="item.type_img == 2">
+                    <div [ngStyle]="{'flex':item.ge_img}" (click)="goDetail(item.goods_id,0)" >
+                      <img class="magic_list_img"  src="{{item.img | formatImg}}">
+                    </div>
+                  </ng-container>
+              </div>
+            </ng-container>
+             <!-- 二张图片 -->
+            <ng-container *ngIf="magic.mag_json.dh_num == 2">
+              <div *ngFor="let item of magic.mag_json.img_list; let i66 = index" style="margin-bottom: -3px;width: 50%;">
+                <!-- 类型 0：没有跳转链接 -->
+                <div *ngIf="item.type_img == 0">
+                  <a href="{{item.url_img}}" [ngStyle]="{'flex':item.ge_img}">
+                    <img class="magic_list_img" src="{{item.img | formatImg}}" />
+                  </a>
+                </div>
+                <!-- 类型 1：跳转商品类别 -->
+                <ng-container *ngIf="item.type_img == 1">
+                  <div (click)="goList(item.cate_id,0)" [ngStyle]="{'flex':item.ge_img}">
+                    <img class="magic_list_img" src="{{item.img | formatImg}}" />
+                  </div>
+                </ng-container>
+                <!-- 类型  2：跳商品详情 -->
+                <ng-container *ngIf="item.type_img == 2">
+                  <div (click)="goDetail(item.goods_id,0)" [ngStyle]="{'flex':item.ge_img}">
+                    <img class="magic_list_img" src="{{item.img | formatImg}}" />
+                  </div>
+                </ng-container>
+              </div>
+            </ng-container>
+            <!-- 三张图片 -->
+            <ng-container *ngIf="magic.mag_json.dh_num == 3">
+              <div *ngFor="let item of magic.mag_json.img_list; let i66 = index" style="margin-bottom: -3px;width: 33.33%;">
+                <!-- 类型 0：没有跳转链接 -->
+                <div *ngIf="item.type_img == 0">
+                  <a href="{{item.url_img}}" [ngStyle]="{'flex':item.ge_img}">
+                    <!-- <img class="magic_list_img" src="{{item.img | formatImg}}" height="{{magic.height}}" /> -->
+                    <img class="magic_list_img" src="{{item.img | formatImg}}"  />
+                  </a>
+                </div>
+                <!-- 类型 1：跳转商品类别 -->
+                <ng-container *ngIf="item.type_img == 1">
+                  <div (click)="goList(item.cate_id,0)" [ngStyle]="{'flex':item.ge_img}">
+                    <img class="magic_list_img" src="{{item.img | formatImg}}" />
+                  </div>
+                </ng-container>
+                <!-- 类型  2：跳商品详情 -->
+                <ng-container *ngIf="item.type_img == 2">
+                  <div (click)="goDetail(item.goods_id,0)" [ngStyle]="{'flex':item.ge_img}">
+                    <img class="magic_list_img" src="{{item.img | formatImg}}" />
+                  </div>
+                </ng-container>
+              </div>
+            </ng-container>
+            <!-- 四张图片 -->
+            <ng-container *ngIf="magic.mag_json.dh_num == 4">
+              <div *ngFor="let item of magic.mag_json.img_list; let i66 = index" style="margin-bottom: -3px;width: 25%;">
+                <!-- 类型 0：没有跳转链接 -->
+                <div *ngIf="item.type_img == 0">
+                  <a href="{{item.url_img}}" [ngStyle]="{'flex':item.ge_img}">
+                    <img class="magic_list_img" src="{{item.img | formatImg}}" />
+                  </a>
+                </div>
+                <!-- 类型 1：跳转商品类别 -->
+                <ng-container *ngIf="item.type_img == 1">
+                  <div (click)="goList(item.cate_id,0)" [ngStyle]="{'flex':item.ge_img}">
+                    <img class="magic_list_img" src="{{item.img | formatImg}}" />
+                  </div>
+                </ng-container>
+                <!-- 类型  2：跳商品详情 -->
+                <ng-container *ngIf="item.type_img == 2">
+                  <div (click)="goDetail(item.goods_id,0)" [ngStyle]="{'flex':item.ge_img}">
+                    <img class="magic_list_img" src="{{item.img | formatImg}}" />
+                  </div>
+                </ng-container>
+              </div>
+            </ng-container>
+          </div>
+        </ng-container>
+
+        <!--style_type=99,主块多行布局-->
+        <ng-container *ngIf="magic.mag_type == 99">
+          <div class="style_type99">
+            <!--主图布局-->
+            <div [ngStyle]="{'flex': magic.mag_json.proimg_ge,'order': magic.mag_json.lr_type}">
+              <!-- 类型 0：没有跳转链接 -->
+              <ng-container *ngIf="magic.mag_json.proimg_type_img == 0">
+                <a href="{{magic.mag_json.proimg_url}}">
+                  <img class="magic_list_img" src="{{magic.mag_json.proimg | formatImg}}" />
+                </a>
+              </ng-container>
+              <!-- 类型 1：跳转商品类别 -->
+              <ng-container *ngIf="magic.mag_json.proimg_type_img == 1">
+                <div (click)="goList(magic.mag_json.proimg_cate_id, 0)">
+                  <img class="magic_list_img" src="{{magic.mag_json.proimg | formatImg}}" />
+                </div>
+              </ng-container>
+              <!-- 类型  2：跳商品详情 -->
+              <ng-container *ngIf="magic.mag_json.proimg_type_img == 2">
+                <div (click)="goDetail(magic.mag_json.proimg_goods_id,0)">
+                  <img class="magic_list_img" src="{{magic.mag_json.proimg | formatImg}}" />
+                </div>
+              </ng-container>
+            </div>
+            <!--多行布局-->
+            <div style="flex: 6;">
+              <div style="display: flex;" *ngFor="let item_list of magic.mag_json.row_list; let i992 = index">
+                <ng-container *ngFor="let item_list_item of item_list; let i998 = index">
+                  <!-- 类型 0：没有跳转链接 -->
+                  <div *ngIf="item_list_item.type_img_img == 0">
+                    <a href="{{item_list_item.url_row_img}}" [ngStyle]="{'flex':item_list_item.ge_row_img}">
+                      <img class="magic_list_img_d" src="{{item_list_item.row_img | formatImg}}" />
+                    </a>
+                  </div>
+                  <!-- 类型 1：跳转商品类别 -->
+                  <ng-container *ngIf="item_list_item.type_img_img == 1">
+                    <div (click)="goList(item_list_item.cate_id_img,0)" [ngStyle]="{'flex':item_list_item.ge_row_img}">
+                      <div>
+                        <img class="magic_list_img_d" src="{{item_list_item.row_img | formatImg}}" />
+                      </div>
+                    </div>
+                  </ng-container>
+                  <!-- 类型  2：跳商品详情 -->
+                  <ng-container *ngIf="item_list_item.type_img_img == 2">
+                    <div (click)="goDetail(item_list_item.goods_id_img,0)" [ngStyle]="{'flex':item_list_item.ge_row_img}">
+                      <div>
+                        <img class="magic_list_img_d" src="{{item_list_item.row_img | formatImg}}" />
+                      </div>
+                    </div>
+                  </ng-container>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+
+      </div>
+    </div>
+
+    <!-- 6. 通知 -->
+    <div id="container">
+      <!-- <div class="tongzhi">通知公告:</div> -->
+      <div id="static_big_box">
+        <div id="runing_box">
+            <div class="box" target="_blank" style="text-decoration:none;">
+              <p class="animate">
+                {{articleList}}
+              </p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- 7. 版权文字 -->
+    <div class="footer"><span>广州市罗斯泰克科技有限公司&copy;技术支持</span></div>
+
+</div>
+
+
+<!-- 弹框 有新的版本可更新 -->
+<div *ngIf="showModal" class="app-version" >
+  <div class="card" >
+    <div class="app-title">发现新版本{{app_version}}</div>
+    <div class="card_container">
+      <p class="card_title">已有新版本，是否更新?</p>
+      <p class="card_content">已更新相关功能,优化相关页面。</p>
+    </div>
+    <div class="card_buttons">
+      <div>
+        <button type="button" (click)="cancel()" class="cbut1">以后再说</button>
+      </div>
+      <div>
+        <button type="button" (click)="update()" class="cbut2">立即更新</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

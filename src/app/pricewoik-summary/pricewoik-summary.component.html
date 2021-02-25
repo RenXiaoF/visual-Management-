@@ -1,0 +1,157 @@
+<!-- <p>pricewoik-summary works!</p> -->
+<div class="content">
+  <!-- header -->
+  <div class="header" [ngStyle]="{'background-color': backgroundColor}">
+    <span class="back" (click)="goBack(3)">&lt;</span>
+    <div class="header_title">计件报表汇总</div>
+    <img class="img" src="./assets/img/search-b.png" alt="" (click)="showModal(template)">
+  </div>
+  <div class="time">
+    <div class="time_start">{{selectedMomentsFrom ? startTimeJQ : startTime }}</div>
+    <div class="time_end">{{selectedMomentsTo ? endTimeJQ : endTime }}</div>
+  </div>
+  <!-- 列表 -->
+  <div class="card">
+    <!-- title -->
+    <div class="nav">
+      <ul class="nav_ul1">
+        <li >
+          <div class="hot_desc1">
+            <p class="p1">员工名称</p>
+            <p class="p1" *ngFor="let title of conList;let i = index">{{ title.EmployeeNM }}</p>
+          </div>
+        </li>
+      </ul>
+      <ul class="nav_ul">
+        <li >
+          <div class="hot_desc">
+            <p class="p">员工编号</p>
+            <p class="p2" *ngFor="let title of conList">{{ title.EmployeeID }}</p>
+          </div>
+        </li>
+        <li >
+          <div class="hot_desc">
+            <p class="p">部门编号</p>
+            <p class="p2" *ngFor="let title of conList">{{ title.deptid }}</p>
+          </div>
+        </li>
+        <li >
+          <div class="hot_desc">
+            <p class="p">部门名称</p>
+            <p class="p2" *ngFor="let title of conList">{{ title.deptnm }}</p>
+          </div>
+        </li>
+        <li >
+          <div class="hot_desc">
+            <p class="p">制单号</p>
+            <p class="p2" *ngFor="let title of conList">{{ title.MPSID }}</p>
+          </div>
+        </li>
+        <li >
+          <div class="hot_desc">
+            <p class="p">款号</p>
+            <p class="p2" *ngFor="let title of conList">{{ title.Code }}</p>
+          </div>
+        </li>
+        <li >
+          <div class="hot_desc">
+            <p class="p">款名</p>
+            <p class="p2" *ngFor="let title of conList">{{ title.Name }}</p>
+          </div>
+        </li>
+        <li >
+          <div class="hot_desc">
+            <p class="p">工序号</p>
+            <p class="p2" *ngFor="let title of conList">{{ title.WPID }}</p>
+          </div>
+        </li>
+        <li >
+          <div class="hot_desc">
+            <p class="p">工序名称</p>
+            <p class="p2" *ngFor="let title of conList">{{ title.WPName }}</p>
+          </div>
+        </li>
+        <li >
+          <div class="hot_desc">
+            <p class="p">数量</p>
+            <p class="p2" *ngFor="let title of conList">{{ title.qty }}</p>
+          </div>
+        </li>
+        <li >
+          <div class="hot_desc">
+            <p class="p">工价</p>
+            <p class="p2" *ngFor="let title of conList">{{ title.Price }}</p>
+          </div>
+        </li>
+        <li >
+          <div class="hot_desc">
+            <p class="p">类别</p>
+            <p class="p2" *ngFor="let title of conList">{{ title.Type }}</p>
+          </div>
+        </li>
+        <!-- <li >
+          <div class="hot_desc">
+            <p class="p">工价/每打</p>
+            <p class="p2" *ngFor="let title of conList">{{ title.name13 }}</p>
+          </div>
+        </li> -->
+        <li >
+          <div class="hot_desc">
+            <p class="p">打数</p>
+            <p class="p2" *ngFor="let title of conList">{{ title.qty}}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <!-- 弹框  弹出一个order_id 的列表 -->
+  <ng-template #template>
+    <div class="madal_box">
+      <div class="modal-header modal_header">
+        <h4 class="modal-title pull-left modal_title">查询条件</h4>
+        <button type="button" class="close pull-right button_close" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body modal_body">
+        <!-- 日期选择器 -->
+        <div class="pick_time">
+          <!-- 输入的关键字 姓名 -->
+          <div class="modal_input">
+            <span>员工信息：</span>
+            <input class="search" type="text" placeholder="请输入员工名字/员工工号" [(ngModel)]="searchname" >
+          </div>
+          <!-- 输入的关键字 单号 -->
+          <!-- <div class="modal_input">
+            <span>单号：</span>
+            <input class="search" type="text" placeholder="请输入" [(ngModel)]="ordernum" >
+          </div> -->
+          <!-- 输入的关键字  款号-->
+          <!-- <div class="modal_input">
+            <span>款号：</span>
+            <input class="search" type="text" placeholder="请输入" [(ngModel)]="stylenum" >
+          </div> -->
+         <!-- 开始日期 -->
+         <div class="modal_input">
+           <span>开始时间：</span>
+           <input [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" [(ngModel)]="selectedMomentsFrom" placeholder="{{startTime}}">
+           <owl-date-time #dt1 pickerType="calendar"></owl-date-time>
+         </div>
+         <!-- 结束日期 -->
+         <div class="modal_input">
+          <span>结束时间：</span>
+           <input [owlDateTime]="dt2" [owlDateTimeTrigger]="dt2" [(ngModel)]="selectedMomentsTo" placeholder="{{endTime}}">
+           <owl-date-time #dt2 pickerType="calendar"></owl-date-time>
+         </div>
+         <!-- 搜索按钮 -->
+         <div>
+           <div class="buttons" >
+             <button  (click)="entrueSearch(); modalRef.hide()" class="button"> 搜索</button>
+           </div>
+         </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>

@@ -1,0 +1,24 @@
+<!-- <p>kanban works!</p> -->
+<div class="content">
+  <!-- 1. header -->
+  <div class="header_content" [ngStyle]="{'background-color': backgroundColor}">
+    <div class="header">
+      <div class="header_title">智能看板</div>
+    </div>
+  </div>
+  <!-- 卡片 内容 -->
+
+  <div class="main">
+    <ng-container *ngFor="let item of kanbanList; let inx = index">
+      <div class="card" (click)="gotoKanban(inx,item.title)">
+        <div class="img">
+          <img src="{{item.backimg}}" alt="" />
+        </div>
+        <div class="container">
+          <p class="card_content">{{ item.title }}</p>
+          <p class="card_title">{{ item.mark }}</p>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

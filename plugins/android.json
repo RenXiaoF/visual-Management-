@@ -1,0 +1,19 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.ross.erp.ad"
+    }
+  },
+  "dependent_plugins": {
+    "com.ross.plugin.rotools": {
+      "PACKAGE_NAME": "com.ross.erp.ad"
+    }
+  }
+}

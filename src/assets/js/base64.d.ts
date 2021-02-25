@@ -1,0 +1,1 @@
+declare var Base64:any;

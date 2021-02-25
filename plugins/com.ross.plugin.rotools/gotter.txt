@@ -1,0 +1,4 @@
+这是为Ross开发的通用工具类插件。
+可以把该文件夹拷贝到一个cordova项目中，
+并执行cordova plugin add com.ross.plugin.rotools
+将此插件及测试页添加到cordova项目中。
